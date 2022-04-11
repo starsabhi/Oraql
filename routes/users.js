@@ -86,13 +86,66 @@ router.post('/sign-up', csrfProtection, userValidators, asyncHandler( async(req,
 
   } else {
     const errors = validatorErrors.array().map(error => error.msg);
-    res.render("sign-up", {
+    res.render('sign-up', {
       title: 'Sign Up',
       user,
       errors,
       csrfToken: req.csrfToken()
     });
   };
+}));
+
+router.get('/log-in', csrfProtection, (req, res) => {
+  res.render('log-in', {
+    title: 'Log In',
+    csrfToken: req.csrfToken()
+  });
+});
+
+const loginValidators = [
+  check('email')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Email'),
+  check('password')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Password'),
+];
+
+router.post('/log-in', csrfProtection, loginValidators, asyncHandler( async(req, res) => {
+  const {
+    email,
+    password
+  } = req.body;
+
+  let errors = [];
+  const validatorErrors = validationResult(req);
+
+  if (validatorErrors.isEmpty()) {
+    const user = await db.User.findOne({ where: { email } });
+
+    if (user) {
+      const passwordCheck = await bcrypt.compare(password, user.password);
+
+      if (passwordCheck) {
+        loginUser(req, res, user);
+        return res.redirect('/');
+      } else {
+        errors.push('Incorrect password')
+      }
+    } else {
+      errors.push('Email not found');
+    }
+  } else {
+    errors = validatorErrors.array().map(error => error.msg);
+  }
+
+  res.render('log-in', {
+    title: 'Log In',
+    email,
+    errors,
+    csrfToken: req.csrfToken()
+  });
+
 }));
 
 module.exports = router;
