@@ -35,3 +35,4 @@ Locally computer
 7- npm install csurf
 8- npm install express-validator
 9-SESSION_SECRET=02ed0d84-8377-4436-b809-d35d5049daa4 and env file
+10- npm install bcryptjs
