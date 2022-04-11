@@ -3,14 +3,14 @@ html
   head
       block head
         title= title
-        link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel='stylesheet' href='/stylesheets/main.css')
   body
     if locals.authenticated
       span hello #{user.username}
       form(action='/users/log-out', method='post')
         button(type='submit') Log Out
-    else 
+    else
       span
-        a(href='/users/log-in') Log In 
+        a(href='/users/log-in') Log In
         a(href='/users/sign-up') Sign Up
     block content
