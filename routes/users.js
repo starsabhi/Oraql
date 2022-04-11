@@ -82,7 +82,7 @@ router.post('/sign-up', csrfProtection, userValidators, asyncHandler( async(req,
 
     await user.save();
     loginUser(req, res, user);
-    res.redirect('/');
+    req.session.save(() => res.redirect("/"));
 
   } else {
     const errors = validatorErrors.array().map(error => error.msg);
@@ -147,5 +147,11 @@ router.post('/log-in', csrfProtection, loginValidators, asyncHandler( async(req,
   });
 
 }));
+
+
+router.post('/log-out', (req, res) => {
+  logoutUser(req, res);
+  req.session.save(() => res.redirect("/"));
+})
 
 module.exports = router;

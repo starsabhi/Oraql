@@ -1,3 +1,4 @@
+const { restoreUser } = require('./auth');
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -36,6 +37,7 @@ app.use(
 // create Session table if it doesn't already exist
 store.sync();
 
+app.use(restoreUser);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
