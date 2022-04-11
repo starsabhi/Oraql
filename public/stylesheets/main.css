@@ -1,0 +1,80 @@
+body {
+  padding: 50px;
+  background-color: black;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+a {
+  color: #00B7FF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, a, ol, li, ul, div, span,
+body, header, nav {
+  font-size: 1rem;
+  /* color: inherit; */
+  /* background-color: transparent; */
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.bigOraqlLogo {
+  /* height: 50px; */
+  width: 110px;
+  margin: 20px;
+}
+
+.form-div {
+width: 450px;
+margin-left: auto;
+margin-right: auto;
+border-radius: 10px;
+/* padding: 20px; */
+border: solid white;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 4px;
+}
+
+.formButton {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  margin: 20px;
+  margin-left: 230px;
+  border-radius: 50px;
+  border: none;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#accountAnchor {
+  text-align: center;
+}
+
+#accountAnchortext {
+  text-decoration: none;
+}
