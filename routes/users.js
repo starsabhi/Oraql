@@ -128,7 +128,7 @@ router.post('/log-in', csrfProtection, loginValidators, asyncHandler( async(req,
 
       if (passwordCheck) {
         loginUser(req, res, user);
-        return res.redirect('/');
+        return req.session.save(() => res.redirect("/"));
       } else {
         errors.push('Incorrect password')
       }
