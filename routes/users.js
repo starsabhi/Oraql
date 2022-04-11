@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const { csrfProtection, asyncHandler } = require('./utils');
+const { check, validationResult } = require('express-validator');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/sign-up', csrfProtection, function(req, res) {
+  res.render('sign-up')
 });
 
 module.exports = router;

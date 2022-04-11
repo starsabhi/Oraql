@@ -24,3 +24,14 @@ Association::
 1- user hasMany questions and answers and comments, =>>>>one to Many
 2-question hasMany answers ====>>>> one to many
 3- answer hasMany comments ===>>>> one to many
+
+Locally computer
+0- update env file
+1- npm install \*\*\*\*
+2- create user oraql_app with password 'oraql_password' createdb;
+3- create database oraql_data with owner oraql_app;
+4- npx sequelize-cli model:generate --name User --attributes username:string,email:string,password:string
+6- npx dotenv sequelize db:migrate \*\*\*\*
+7- npm install csurf
+8- npm install express-validator
+9-SESSION_SECRET=02ed0d84-8377-4436-b809-d35d5049daa4 and env file
