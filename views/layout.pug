@@ -7,12 +7,30 @@ html
         link(href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet")
         <link rel="icon" type="image/png" href="/favicon.png"/>
   body
-    if locals.authenticated
-      span hello #{user.username}
-      form(action='/users/log-out', method='post')
-        button(type='submit') Log Out
-    else
-      span
-        a(href='/users/log-in') Log In
-        a(href='/users/sign-up') Sign Up
+    div(class='navBar')
+      div(class='navbarContent')
+        div(class='navObject')
+          img(src="/images/oraql-logo.png" class='smallOraqlLogo')
+        div(class='navObject')
+          a(href="/")
+            img(src="/images/oraql-home-icon.png" class='navIcon')
+        div(class='navObject')
+          form(action="/search" method="get")
+            input(type="text")
+        div(class='navObject')
+          button(type='submit' class='askbtn formButton') Ask Question
+        div
+          if locals.authenticated
+            div hello #{user.username}
+            form(action='/users/log-out', method='post')
+              button(type='submit') Log Out
+          else
+            div(class='signandlogin')
+              div(class='accountAnchor')
+                a(href='/users/log-in' class='accountAnchortext') Log In
+              div(class='accountAnchor')
+                a(href='/users/sign-up' class='accountAnchortext') Sign Up
+        //- div(class='navObject')
+        //-   button()
+
     block content
