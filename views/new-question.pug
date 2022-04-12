@@ -16,6 +16,6 @@ block content
         each tag in tags
             option(value=tag.id selected=(tag.id === data.tagId )) #{tag.tagName}
       div
-        a(href='/' class='formButton') Cancel
+        a:button(href='/' class='formButton cancelButton') Cancel
       div
         button(type='submit' class='formButton') Submit

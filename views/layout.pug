@@ -16,9 +16,9 @@ html
             img(src="/images/oraql-home-icon.png" class='navIcon')
         div(class='navObject')
           form(action="/search" method="get")
-            input(type="text")
+            input(type="text" class="searchBar")
         div(class='navObject')
-          a(href='/questions/new' class='askbtn formButton') Ask Question
+          a:button(href='/questions/new' class='askbtn formButton') Ask Question
         div
           if locals.authenticated
             div hello #{user.username}
