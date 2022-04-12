@@ -27,7 +27,9 @@ router.get("/new", requireAuth, csrfProtection, asyncHandler(async(req, res) => 
 const questionValidators = [
   check('content')
     .exists({ checkFalsy: true })
-    .withMessage('Question cannot be empty'),
+    .withMessage('Question cannot be empty')
+    .isLength({ max: 140 })
+    .withMessage('Question cannot be more than 140 characters long'),
   check('tagId')
     .exists({ checkFalsy: true })
     .withMessage('Please select a tag for your question')
@@ -46,11 +48,10 @@ router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandle
   });
 
   const validatorErrors = validationResult(req);
-  console.log(req.body)
+  // console.log(req.body)
   if (validatorErrors.isEmpty()) {
     await question.save();
-    // res.redirect(`/questions/${newQuestion.id}`);
-    res.redirect('/');
+    res.redirect(`/questions/${newQuestion.id}`);
   } else {
     const errors = validatorErrors.array().map(error => error.msg);
     console.log('error content ', question.content)
@@ -66,9 +67,8 @@ router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandle
 }));
 
 
-
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
-  const questionId = parseInt(req.params.id,10);
+  const questionId = parseInt(req.params.id, 10);
   const question = await db.Question.findByPk(questionId, { include: [db.User, { model: db.Answer, include: db.User }, db.Tag]});
   // console.log(question)
   // console.log(question.Answers[0].User.username);
@@ -76,8 +76,39 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 
 }))
 
+router.get('/:id(\\d+)/edit', csrfProtection, asyncHandler(async(req, res) => {
+  const questionId = parseInt(req.params.id, 10);
+  const question = await db.Question.findByPk(questionId);
+  const tags = await db.Tag.findAll();
+  res.render('update-question', {title: "Edit Your Question", question, tags, csrfToken: req.csrfToken() });
+}));
 
+router.post('/:id(\\d+)/edit', csrfProtection, questionValidators, asyncHandler(async(req, res) => {
+  const { content, tagId } = req.body;
+  const questionId = parseInt(req.params.id, 10);
+  const question = await db.Question.findByPk(questionId);
+  const tags = await db.Tag.findAll();
 
+  const validatorErrors = validationResult(req);
+  question.content = content;
+  question.tagId = tagId;
+
+  if (validatorErrors.isEmpty()) {
+
+    await question.save();
+    req.session.save(() => res.redirect(`/questions/${question.id}`));
+  } else {
+    const errors = validatorErrors.array().map(error => error.msg);
+    // console.log('error content ', question.content)
+    res.render("update-question", {
+      title: "Edit Your Question",
+      question,
+      errors,
+      csrfToken: req.csrfToken(),
+      tags,
+    });
+  }
+}))
 
 
 module.exports = router;
