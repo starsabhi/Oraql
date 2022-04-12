@@ -155,3 +155,14 @@ input {
 .signandlogin > a{
 padding: 10px;
 }
+
+.askbtn {
+margin: 0;
+white-space: nowrap;
+background-color: rgb(255, 219, 128);
+}
+
+.navObject {
+margin-left: 10px;
+margin-right: 10px;
+}
