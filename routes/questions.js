@@ -6,6 +6,14 @@ const { check, validationResult } = require('express-validator');
 
 const db = require("../db/models");
 
+const checkPermissions = (question, currentUser) => {
+  if (question.userId !== currentUser.id) {
+    const err = new Error('Illegal operation.');
+    err.status = 403; // Forbidden
+    throw err;
+  }
+};
+
 router.get("/new", requireAuth, csrfProtection, asyncHandler(async(req, res) => {
   const question = db.Question.build();
 
@@ -80,6 +88,9 @@ router.get('/:id(\\d+)/edit', csrfProtection, asyncHandler(async(req, res) => {
   const questionId = parseInt(req.params.id, 10);
   const question = await db.Question.findByPk(questionId);
   const tags = await db.Tag.findAll();
+
+  checkPermissions(question, res.locals.user);
+
   res.render('update-question', {title: "Edit Your Question", question, tags, csrfToken: req.csrfToken() });
 }));
 
@@ -90,6 +101,9 @@ router.post('/:id(\\d+)/edit', csrfProtection, questionValidators, asyncHandler(
   const tags = await db.Tag.findAll();
 
   const validatorErrors = validationResult(req);
+
+  checkPermissions(question, res.locals.user);
+
   question.content = content;
   question.tagId = tagId;
 
@@ -108,7 +122,33 @@ router.post('/:id(\\d+)/edit', csrfProtection, questionValidators, asyncHandler(
       tags,
     });
   }
-}))
+}));
+
+router.get('/:id(\\d+)/delete', requireAuth, csrfProtection, asyncHandler(async(req, res) => {
+  const questionId = parseInt(req.params.id, 10);
+  const question = await db.Question.findByPk(questionId);
+
+  checkPermissions(question, res.locals.user);
+
+  res.render(`question-delete`, {
+    title: 'Delete Your Question',
+    csrfToken: req.csrfToken(),
+    question
+  });
+
+}));
+
+router.post('/:id(\\d+)/delete', requireAuth, csrfProtection, asyncHandler(async(req, res) => {
+  const questionId = parseInt(req.params.id, 10);
+  const question = await db.Question.findByPk(questionId);
+
+  checkPermissions(question, res.locals.user);
+
+  await question.destroy();
+
+  req.session.save(() => res.redirect(`/`));
+
+}));
 
 
 module.exports = router;
