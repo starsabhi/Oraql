@@ -1,3 +1,24 @@
 extends layout.pug
 include utils.pug
 block content
+    div
+        h2 #{question.content}
+        div #{question.User.username} 
+        div 
+            if locals.authenticated 
+                if question.User.id === locals.user.id
+                    a(href=`/questions/${question.id}/edit`) Edit 
+                    form(action=`/questions/${question.id}/delete`, method='post') 
+                        button(type='submit') Delete
+            span ##{question.Tag.tagName}
+            a(href=`/questions/${question.id}/answers/new`) Answer
+            each answer in question.Answers
+                div 
+                    p #{answer.User.username}
+                    p #{answer.content}
+                    if locals.authenticated 
+                        if answer.User.id === locals.user.id
+                            a(href=`/answers/${answer.id}/edit`) Edit 
+                            form(action=`/answers/${answer.id}/delete`, method='post') 
+                                button(type='submit') Delete
+                

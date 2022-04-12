@@ -67,10 +67,11 @@ router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandle
 
 
 
-router.get('/questions/:id(\\d+)', asyncHandler(async(req, res) => {
+router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
   const questionId = parseInt(req.params.id,10);
-  const question = await db.Question.findByPk(questionId, { include: [{ model: db.User }, { model: db.Answer }, {model: db.Tag }]});
-
+  const question = await db.Question.findByPk(questionId, { include: [db.User, { model: db.Answer, include: db.User }, db.Tag]});
+  // console.log(question)
+  // console.log(question.Answers[0].User.username);
   res.render('question-detail', { title: question.content, question })
 
 }))
