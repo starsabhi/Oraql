@@ -27,7 +27,9 @@ router.get("/new", requireAuth, csrfProtection, asyncHandler(async(req, res) => 
 const questionValidators = [
   check('content')
     .exists({ checkFalsy: true })
-    .withMessage('Question cannot be empty'),
+    .withMessage('Question cannot be empty')
+    .isLength({ max: 140 })
+    .withMessage('Question cannot be more than 140 characters long'),
   check('tagId')
     .exists({ checkFalsy: true })
     .withMessage('Please select a tag for your question')
@@ -82,6 +84,9 @@ router.get('/:id(\\d+)/edit', asyncHandler(async(req, res) => {
   res.render('update-question', {title: "Edit Your Question", question, tags});
 }))
 
+router.post('/:id(\\d+)/edit', questionValidators, asyncHandler(async(req, res) => {
+  
+}))
 
 
 module.exports = router;

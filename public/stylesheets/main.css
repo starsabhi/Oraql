@@ -84,7 +84,7 @@ select {
 
 .formButton {
   font: 14px 'Varela Round', Helvetica, Arial, sans-serif;
-  background-color: white;
+  background-color: rgb(255, 219, 128);
   color: black;
   padding: 5px;
   margin: 20px;
@@ -122,7 +122,7 @@ select {
 
   .cancelButton {
   white-space: nowrap;
-  background-color: rgb(255, 219, 128);
+  background-color: white;
   text-decoration: none;
   }
 
@@ -187,4 +187,8 @@ margin-right: 10px;
 
 .searchBar {
   min-width: 200px;
+}
+
+#less {
+  font-size: 8pt;
 }
