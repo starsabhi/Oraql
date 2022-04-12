@@ -6,7 +6,7 @@ block content
     h2(class='formTitle') Edit Your Question
     hr(class='divider')
     +validationErrorSummary(errors)
-    form(action=`/questions/${question.id}` method='post')
+    form(action=`/questions/${question.id}/edit` method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
       label(for="content") I want to know...
       textarea(name="content" cols="30" rows="10" maxlength='140') #{question.content}

@@ -48,11 +48,10 @@ router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandle
   });
 
   const validatorErrors = validationResult(req);
-  console.log(req.body)
+  // console.log(req.body)
   if (validatorErrors.isEmpty()) {
     await question.save();
-    // res.redirect(`/questions/${newQuestion.id}`);
-    res.redirect('/');
+    res.redirect(`/questions/${newQuestion.id}`);
   } else {
     const errors = validatorErrors.array().map(error => error.msg);
     console.log('error content ', question.content)
@@ -77,15 +76,38 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 
 }))
 
-router.get('/:id(\\d+)/edit', asyncHandler(async(req, res) => {
+router.get('/:id(\\d+)/edit', csrfProtection, asyncHandler(async(req, res) => {
   const questionId = parseInt(req.params.id, 10);
   const question = await db.Question.findByPk(questionId);
   const tags = await db.Tag.findAll();
-  res.render('update-question', {title: "Edit Your Question", question, tags});
-}))
+  res.render('update-question', {title: "Edit Your Question", question, tags, csrfToken: req.csrfToken() });
+}));
 
-router.post('/:id(\\d+)/edit', questionValidators, asyncHandler(async(req, res) => {
-  
+router.post('/:id(\\d+)/edit', csrfProtection, questionValidators, asyncHandler(async(req, res) => {
+  const { content, tagId } = req.body;
+  const questionId = parseInt(req.params.id, 10);
+  const question = await db.Question.findByPk(questionId);
+  const tags = await db.Tag.findAll();
+
+  const validatorErrors = validationResult(req);
+  question.content = content;
+  question.tagId = tagId;
+
+  if (validatorErrors.isEmpty()) {
+
+    await question.save();
+    req.session.save(() => res.redirect(`/questions/${question.id}`));
+  } else {
+    const errors = validatorErrors.array().map(error => error.msg);
+    // console.log('error content ', question.content)
+    res.render("update-question", {
+      title: "Edit Your Question",
+      question,
+      errors,
+      csrfToken: req.csrfToken(),
+      tags,
+    });
+  }
 }))
 
 
