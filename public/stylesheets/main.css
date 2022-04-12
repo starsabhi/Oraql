@@ -67,6 +67,21 @@ input {
   padding: 4px;
 }
 
+textarea {
+  font: 20px 'Varela Round', Helvetica, Arial, sans-serif;
+  border-radius: 5px;
+  border: none;
+  padding: 4px;
+}
+
+select {
+  font: 20px 'Varela Round', Helvetica, Arial, sans-serif;
+  width: 50%;
+  border-radius: 5px;
+  border: none;
+  padding: 2px;
+}
+
 .formButton {
   font: 14px 'Varela Round', Helvetica, Arial, sans-serif;
   background-color: white;
@@ -136,8 +151,6 @@ input {
   width: 78%;
   border: solid 1px rgb(51, 37, 58);
 }
-
-
 
 .smallOraqlLogo {
   width: 80px;
