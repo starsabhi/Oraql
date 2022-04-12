@@ -41,6 +41,8 @@ Locally computer
 12 - npx sequelize-cli model:generate --name Question --attributes content:text,userId:integer,tagId:integer
 13 - npx sequelize-cli model:generate --name Answer --attributes content:text,userId:integer,questionId:integer
 14 - npx dotenv sequelize db:migrate
+
+
 npx dotenv sequelize db:drop
 
 npx dotenv sequelize db:create
@@ -50,5 +52,7 @@ npx dotenv sequelize-cli db:migrate
 npx sequelize seed:generate --name tagsData
 npx sequelize seed:generate --name usersData
 npx sequelize seed:generate --name questionsData
-npx sequelize seed:generate --name answersData  
+npx sequelize seed:generate --name answersData
+
+
 npx dotenv sequelize db:seed:all
