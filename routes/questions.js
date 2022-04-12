@@ -23,4 +23,18 @@ router.get("/new", requireAuth, csrfProtection, asyncHandler(async(req, res) => 
   });
 }));
 
+const questionValidators = [];
+
+router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandler(async(req, res) => {
+
+  const { content, tagId } = req.body;
+  const { userId } = req.session.auth;
+
+  const newQuestion = await db.Question.create({ content, tagId, userId })
+
+  // res.redirect(`/questions/${newQuestion.id}`);
+  res.redirect('/');
+
+}));
+
 module.exports = router;
