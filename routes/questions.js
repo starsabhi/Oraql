@@ -66,9 +66,8 @@ router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandle
 }));
 
 
-
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
-  const questionId = parseInt(req.params.id,10);
+  const questionId = parseInt(req.params.id, 10);
   const question = await db.Question.findByPk(questionId, { include: [db.User, { model: db.Answer, include: db.User }, db.Tag]});
   // console.log(question)
   // console.log(question.Answers[0].User.username);
@@ -76,7 +75,12 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 
 }))
 
-
+router.get('/:id(\\d+)/edit', asyncHandler(async(req, res) => {
+  const questionId = parseInt(req.params.id, 10);
+  const question = await db.Question.findByPk(questionId);
+  const tags = await db.Tag.findAll();
+  res.render('update-question', {title: "Edit Your Question", question, tags});
+}))
 
 
 
