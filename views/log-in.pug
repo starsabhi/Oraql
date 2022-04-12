@@ -1,12 +1,16 @@
 extends layout.pug
 include utils.pug
 block content
-  +validationErrorSummary(errors)
-  form(action='/users/log-in' method='post')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    +field('Email', 'email', email)
-    +field('Password', 'password', password, 'password')
-    div
-      button(type='submit') Log In
-  div
-    p: a(href='/users/sign-up') Don't have an account?
+  div(class='form-div')
+    img(src="/images/oraql-logo.png" class='bigOraqlLogo')
+    h2(class='formTitle') Log In
+    hr(class='divider')
+    +validationErrorSummary(errors)
+    form(action='/users/log-in' method='post')
+      input(type='hidden' name='_csrf' value=csrfToken)
+      +field('Email', 'email', email)
+      +field('Password', 'password', password, 'password')
+      div
+        button(type='submit' class='formButton') Log In
+      div(class='accountAnchor')
+        p: a(href='/users/sign-up' class='accountAnchortext') Don't have an account?
