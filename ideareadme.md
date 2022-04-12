@@ -46,3 +46,9 @@ npx dotenv sequelize db:drop
 npx dotenv sequelize db:create
 
 npx dotenv sequelize-cli db:migrate
+
+npx sequelize seed:generate --name tagsData
+npx sequelize seed:generate --name usersData
+npx sequelize seed:generate --name questionsData
+npx sequelize seed:generate --name answersData  
+npx dotenv sequelize db:seed:all
