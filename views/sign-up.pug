@@ -4,6 +4,7 @@ block content
     div(class='form-div')
         img(src="/images/oraql-logo.png" class='bigOraqlLogo')
         h2(class='formTitle') Create Account
+        hr(class='divider')
         +validationErrorSummary(errors)
         form(action='/users/sign-up' method='post')
             input(type='hidden' name='_csrf' value=csrfToken)
@@ -13,5 +14,5 @@ block content
             +field('Confirm Password', 'confirmPassword', '', 'password')
             div
                 button(type='submit' class='formButton') Sign Up
-            div(id='accountAnchor')
-                p: a(href='/users/log-in' id='accountAnchortext') Already have an account?
+            div(class='accountAnchor')
+                p: a(href='/users/log-in' class='accountAnchortext') Already have an account?

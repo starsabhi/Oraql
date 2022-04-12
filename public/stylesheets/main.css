@@ -1,12 +1,16 @@
 body {
   padding: 50px;
-  background-color: black;
+  background-color: rgb(37, 33, 43);
   font: 14px 'Varela Round', Helvetica, Arial, sans-serif;
   color: white;
+  background-image: url('/images/oraql-login-background.png');
+  background-size: contain;
+  background-repeat: repeat;
+  height: 100%;
 }
 
 a {
-  color: #00B7FF;
+  color: #e08ff0;
 }
 
 * {
@@ -36,15 +40,17 @@ h1 {
 }
 
 .form-div {
+background-color: rgb(73, 62, 84);
 width: 450px;
 margin-left: auto;
 margin-right: auto;
 border-radius: 10px;
 /* padding: 20px; */
-border: solid white;
+border: 2px solid rgb(25, 20, 28);
 display: flex;
 flex-direction: column;
 align-items: center;
+box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, .5);
 }
 
 label {
@@ -54,6 +60,7 @@ label {
 }
 
 input {
+  font: 20px 'Varela Round', Helvetica, Arial, sans-serif;
   width: 100%;
   border-radius: 5px;
   border: none;
@@ -61,6 +68,7 @@ input {
 }
 
 .formButton {
+  font: 14px 'Varela Round', Helvetica, Arial, sans-serif;
   background-color: white;
   color: black;
   padding: 5px;
@@ -74,27 +82,45 @@ input {
   transition: .3s;
 }
 
-#accountAnchor {
+.accountAnchor {
+  font: 14px 'Varela Round', Helvetica, Arial, sans-serif;
   text-align: center;
   margin-bottom: 25px;
   transition: .3s;
-
 }
 
-#accountAnchortext {
+.accountAnchortext {
   text-decoration: none;
+  font-weight: 550;
 }
 
 .formTitle {
   font-size: 20pt;
 }
 
-.formButton:hover, #accountAnchor:hover {
+.formButton:hover, .accountAnchor:hover {
 
   transform: scale(1.1);
   cursor: pointer;
 }
 
-.formButton:active, #accountAnchor:active {
+.formButton:active, .accountAnchor:active {
   transform: scale(.9);
+}
+
+.formError {
+  color: rgb(255, 170, 113);
+  margin-top: 16px;
+}
+
+.errorList {
+  list-style: none;
+  text-align: center;
+  margin: 4px;
+}
+
+.divider {
+  margin-top: 10px;
+  width: 78%;
+  border: solid 1px rgb(51, 37, 58);
 }
