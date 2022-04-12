@@ -15,7 +15,7 @@ router.get('/', asyncHandler(async(req, res, next) => {
     order: [['createdAt', 'DESC']]
   })
 
-  console.log('HERE ARE QUESTIONS', questions)
+  // console.log('HERE ARE QUESTIONS', questions)
 
   res.render('index', { title: 'Oraql Home Page', questions });
 }));
