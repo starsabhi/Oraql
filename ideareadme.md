@@ -36,3 +36,13 @@ Locally computer
 8- npm install express-validator
 9-SESSION_SECRET=02ed0d84-8377-4436-b809-d35d5049daa4 and env file
 10- npm install bcryptjs
+
+11-npx sequelize-cli model:generate --name Tag --attributes tagName:string
+12 - npx sequelize-cli model:generate --name Question --attributes content:text,userId:integer,tagId:integer
+13 - npx sequelize-cli model:generate --name Answer --attributes content:text,userId:integer,questionId:integer
+14 - npx dotenv sequelize db:migrate
+npx dotenv sequelize db:drop
+
+npx dotenv sequelize db:create
+
+npx dotenv sequelize-cli db:migrate
