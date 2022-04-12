@@ -8,4 +8,10 @@ append head
 
 block content
   h1= title
-  p Welcome to your Project Skeleton
+  p Ask about supernatural encounters and phenomena, or answer a question with your expertise and experience!
+  div
+    each question in questions
+      div
+        a(href=`/questions/${question.id}`) #{question.content}
+        div #{question.User.username}
+        div #{question.Tag.tagName}

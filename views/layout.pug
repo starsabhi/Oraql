@@ -18,7 +18,7 @@ html
           form(action="/search" method="get")
             input(type="text")
         div(class='navObject')
-          button(type='submit' class='askbtn formButton') Ask Question
+          a(href='/questions/new' class='askbtn formButton') Ask Question
         div
           if locals.authenticated
             div hello #{user.username}
