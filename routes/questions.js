@@ -62,12 +62,21 @@ router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandle
       tags,
       data: req.body
     });
-
-    return;
-
   }
-
-
 }));
+
+
+
+router.get('/questions/:id(\\d+)', asyncHandler(async(req, res) => {
+  const questionId = parseInt(req.params.id,10);
+  const question = await db.Question.findByPk(questionId, { include: [{ model: db.User }, { model: db.Answer }, {model: db.Tag }]});
+
+  res.render('question-detail', { title: question.content, question })
+
+}))
+
+
+
+
 
 module.exports = router;
