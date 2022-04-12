@@ -67,6 +67,21 @@ input {
   padding: 4px;
 }
 
+textarea {
+  font: 20px 'Varela Round', Helvetica, Arial, sans-serif;
+  border-radius: 5px;
+  border: none;
+  padding: 4px;
+}
+
+select {
+  font: 20px 'Varela Round', Helvetica, Arial, sans-serif;
+  width: 50%;
+  border-radius: 5px;
+  border: none;
+  padding: 2px;
+}
+
 .formButton {
   font: 14px 'Varela Round', Helvetica, Arial, sans-serif;
   background-color: white;
@@ -98,13 +113,25 @@ input {
   font-size: 20pt;
 }
 
-.formButton:hover, .accountAnchor:hover {
+.askbtn {
+  margin: 0;
+  white-space: nowrap;
+  background-color: rgb(255, 219, 128);
+  text-decoration: none;
+  }
 
+  .cancelButton {
+  white-space: nowrap;
+  background-color: rgb(255, 219, 128);
+  text-decoration: none;
+  }
+
+.formButton:hover, .accountAnchor:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 
-.formButton:active, .accountAnchor:active {
+.formButton:active, .accountAnchor:active, .askbtn:hover {
   transform: scale(.9);
 }
 
@@ -125,8 +152,6 @@ input {
   border: solid 1px rgb(51, 37, 58);
 }
 
-
-
 .smallOraqlLogo {
   width: 80px;
 }
@@ -145,7 +170,6 @@ input {
   justify-content: space-around;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .navIcon {
@@ -156,13 +180,11 @@ input {
 padding: 10px;
 }
 
-.askbtn {
-margin: 0;
-white-space: nowrap;
-background-color: rgb(255, 219, 128);
-}
-
 .navObject {
 margin-left: 10px;
 margin-right: 10px;
+}
+
+.searchBar {
+  min-width: 200px;
 }

@@ -9,14 +9,13 @@ block content
     form(action='/questions/new' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
       label(for="content") I want to know...
-      textarea(name="content" cols="30" rows="10" value=data.content required)
-      label(for="tag") Tag
-      select(name="tag")
+      textarea(name="content" cols="30" rows="10") #{data.content}
+      label(for="tagId") Tag
+      select(name="tagId")
         option(disabled selected) Select a tag
         each tag in tags
-            option(value=tag.id selected=(tag.id === data.tagId )) #{tag.tagName}
-
+            option(value=tag.id selected=(tag.id == data.tagId )) #{tag.tagName}
       div
-        button(type='submit' class='formButton') Log In
-      div(class='accountAnchor')
-        p: a(href='/users/sign-up' class='accountAnchortext') Don't have an account?
+        a(href='/' class='formButton cancelButton') Cancel
+      div
+        button(type='submit' class='formButton') Submit
