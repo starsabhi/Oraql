@@ -149,6 +149,23 @@ router.post('/log-in', csrfProtection, loginValidators, asyncHandler( async(req,
 }));
 
 
+// Demo User
+router.get('/demo-login', asyncHandler(async(req,res)=>{
+  const user = await db.User.findOne({ where: { email: "prue_halliwell@bmail.com" }});
+  loginUser(req, res, user);
+  req.session.save(() => res.redirect("/"));
+}));
+
+
+
+
+
+
+
+
+
+
+
 router.post('/log-out', (req, res) => {
   logoutUser(req, res);
   req.session.save(() => res.redirect("/"));
