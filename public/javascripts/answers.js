@@ -1,27 +1,28 @@
-console.log("Hello from Answers JS")
+// console.log("Hello from Answers JS")
 
 // get edit form when clicking edit button
 const editButtons = document.querySelectorAll('.editAnsBtn');
 
 for (let i = 0; i < editButtons.length; i++) {
     const answerId = parseInt(editButtons[i].id.split('-')[1], 10);
-    const originalAns = document.getElementById(`answer-content-${answerId}`);
-    const content = document.getElementById(`${answerId}-edit-content`);
-    const form = document.querySelector(`#edit-form-${answerId}`);
-    const answerContent = document.querySelector(`#answerDisplay-${answerId}`);
-    const editAnswerButton = document.querySelector(`#edit-${answerId}`);
-    const deleteAnswerButton = document.querySelector(`#delete-${answerId}`);
+
+    const [ originalAns, content, form, answerContent, editAnswerButton, deleteAnswerButton ] = [
+        document.getElementById(`answer-content-${answerId}`),
+        document.getElementById(`${answerId}-edit-content`),
+        document.querySelector(`#edit-form-${answerId}`),
+        document.querySelector(`#answerDisplay-${answerId}`),
+        document.querySelector(`#edit-${answerId}`),
+        document.querySelector(`#delete-${answerId}`)
+    ]
 
     // console.log("originalAns",originalAns.innerHTML)
     // console.log(editButtons[i]);
     editButtons[i].addEventListener('click', e => {
-        // content.textContent = originalAns.innerHTML;
         content.value = originalAns.innerHTML;
-        console.log("new content Value", content.value)
+        // console.log("new content Value", content.value)
         // console.log("Original HTML",originalAns.innerHTML)
         // console.log(e);
         // console.log(answerId)
-
 
         if (form.classList.contains("hidden")) {
             form.classList.remove("hidden");
@@ -41,7 +42,7 @@ for (let i = 0; i < editButtons.length; i++) {
               submitEvent.target.classList[0].split('-')[1],
               10
             );
-            console.log(questionId);
+            // console.log(questionId);
 
             const res = await fetch(`/questions/${questionId}/answers/${answerId}`, {
                 method: 'PUT',
@@ -62,7 +63,7 @@ for (let i = 0; i < editButtons.length; i++) {
             } else {
                 if (data.message === 'Failure') {
                     const errorDiv = document.getElementById(`edit-errors-${answerId}`);
-                    console.log(errorDiv)
+                    // console.log(errorDiv)
                     errorDiv.innerHTML = data.errors[0];
                 }
             }
@@ -77,7 +78,6 @@ for (let i = 0; i < editButtons.length; i++) {
             answerContent.classList.remove("hidden");
             editAnswerButton.classList.remove("hidden");
             deleteAnswerButton.classList.remove("hidden");
-            // const content = document.getElementById(`${answerId}-edit-content`);
             // console.log("Inner HTML", content.innerHTML)
             // content.innerHTML = originalAns.innerHTML
         })
@@ -88,26 +88,23 @@ for (let i = 0; i < editButtons.length; i++) {
 
 
 
-//clicking cancel button: answerDisplay to appear, form disappear
-//click submit button of the edit form
-
-
-
 ///Clicking Delete button
 const deleteBtns = document.querySelectorAll(".deleteAnsBtn");
 
 for (let i = 0; i < deleteBtns.length; i++) {
     const answerId = parseInt(deleteBtns[i].id.split('-')[1], 10);
-    const form = document.querySelector(`#edit-form-${answerId}`);
-    const editAnswerButton = document.querySelector(`#edit-${answerId}`);
-    const deleteAnswerButton = document.querySelector(`#delete-${answerId}`);
+
+    const [ form, editAnswerButton, deleteAnswerButton ] = [
+        document.querySelector(`#edit-form-${answerId}`),
+        document.querySelector(`#edit-${answerId}`),
+        document.querySelector(`#delete-${answerId}`)
+    ]
 
     deleteBtns[i].addEventListener('click', async (e) => {
         const questionId = parseInt(
             e.target.classList[0].split('-')[1],
             10
         );
-        console.log(questionId)
 
         const res = await fetch(`/questions/${questionId}/answers/${answerId}`, {
             method: "DELETE"
