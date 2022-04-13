@@ -1,7 +1,7 @@
 console.log("Hello from Answers JS")
 
 // get edit form when clicking edit button
-const editButtons = document.querySelectorAll('.editBtn');
+const editButtons = document.querySelectorAll('.editAnsBtn');
 
 for (let i = 0; i < editButtons.length; i++) {
     const answerId = parseInt(editButtons[i].id.split('-')[1], 10);
@@ -94,3 +94,20 @@ for (let i = 0; i < editButtons.length; i++) {
 
 
 ///Clicking Delete button
+const deleteBtns = document.querySelectorAll(".deleteAnsBtn");
+
+for (let i = 0; i < deleteBtns.length; i++) {
+    const answerId = parseInt(deleteBtns[i].id.split('-')[1], 10);
+
+    deleteBtns[i].addEventListener('click', async (e) => {
+        const res = await fetch(`/questions/${questionId}/answers/${answerId}`, {
+            method: "DELETE"
+        })
+    })
+
+    const data = await res.json();
+    if (data.message === "Success") {
+        const answerContent = document.querySelector(`#answerDisplay-${answerId}`);
+        answerContent.remove();
+    }
+}
