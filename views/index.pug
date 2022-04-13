@@ -7,11 +7,11 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1= title
-  p Ask about supernatural encounters and phenomena, or answer a question with your expertise and experience!
-  div
+  div(class="mainContentDiv")
+    p(class="pText") Ask about supernatural encounters and phenomena, or answer a question with your expertise and experience!
     each question in questions
-      div
-        a(href=`/questions/${question.id}`) #{question.content}
-        div #{question.User.username}
-        div #{question.Tag.tagName}
+      div(class="questionDiv")
+        a(href=`/questions/${question.id}` class="questionText") #{question.content}
+        div
+          span(class="userTag") #{question.User.username}
+          span(class="userTag tag" id=`${question.Tag.tagName}`) ##{question.Tag.tagName}
