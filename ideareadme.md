@@ -58,3 +58,6 @@ npx dotenv sequelize db:seed:all
 Heroku (pushing your code)
 heroku login
 heroku git:remote -a oraql
+
+heroku run npx sequelize-cli db:migrate
+heroku run npx sequelize-cli db:seed:all
