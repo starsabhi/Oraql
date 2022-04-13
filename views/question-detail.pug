@@ -15,7 +15,7 @@ block content
             a(href=`/questions/${question.id}/answers/new`) Answer
             each answer in question.Answers
                 div
-                    div(id='answerDisplay')
+                    div(id=`answerDisplay-${answer.id}`)
                         p #{answer.User.username}
                         p(id=`answer-content-${answer.id}`) #{answer.content}
                     if locals.authenticated
@@ -23,7 +23,7 @@ block content
                             form(class='hidden' id=`edit-form-${answer.id}`)
                                 div(class='errorList formError' id=`edit-errors-${answer.id}`)
                                 label Edit your answer:
-                                textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="30" rows="10") #{answer.content}
+                                textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="30" rows="10")
                                 button(class="edit-cancel" id=`edit-cancel-${answer.id}`) Cancel
                                 button(class=`q-${question.id} edit-submit` id=`edit-submit-${answer.id}`) Submit
                             button(type='submit' class='editBtn' id=`edit-${answer.id}`) Edit

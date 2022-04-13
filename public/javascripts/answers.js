@@ -4,14 +4,24 @@ console.log("Hello from Answers JS")
 const editButtons = document.querySelectorAll('.editBtn');
 
 for (let i = 0; i < editButtons.length; i++) {
+    const answerId = parseInt(editButtons[i].id.split('-')[1], 10);
+    const originalAns = document.getElementById(`answer-content-${answerId}`);
+    const content = document.getElementById(`${answerId}-edit-content`);
+    const form = document.querySelector(`#edit-form-${answerId}`);
+    const answerContent = document.querySelector(`#answerDisplay-${answerId}`);
+    const editAnswerButton = document.querySelector(`#edit-${answerId}`);
+    const deleteAnswerButton = document.querySelector(`#delete-${answerId}`);
+
+    // console.log("originalAns",originalAns.innerHTML)
     // console.log(editButtons[i]);
     editButtons[i].addEventListener('click', e => {
-        const answerId = parseInt(e.target.id.split('-')[1], 10);
-        console.log(answerId)
-        const form = document.querySelector(`#edit-form-${answerId}`);
-        const answerContent = document.querySelector("#answerDisplay");
-        const editAnswerButton = document.querySelector(`#edit-${answerId}`);
-        const deleteAnswerButton = document.querySelector(`#delete-${answerId}`);
+        // content.textContent = originalAns.innerHTML;
+        content.value = originalAns.innerHTML;
+        console.log("new content Value", content.value)
+        // console.log("Original HTML",originalAns.innerHTML)
+        // console.log(e);
+        // console.log(answerId)
+
 
         if (form.classList.contains("hidden")) {
             form.classList.remove("hidden");
@@ -24,7 +34,7 @@ for (let i = 0; i < editButtons.length; i++) {
 
         submitBtn.addEventListener('click', async(submitEvent) => {
             submitEvent.preventDefault()
-            const content = document.getElementById(`${answerId}-edit-content`).value
+            const contentValue = document.getElementById(`${answerId}-edit-content`).value
 
             // console.log(submitEvent.target.classList)
             const questionId = parseInt(
@@ -37,7 +47,7 @@ for (let i = 0; i < editButtons.length; i++) {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    content
+                    content: contentValue
                 })
             });
 
@@ -57,11 +67,30 @@ for (let i = 0; i < editButtons.length; i++) {
                 }
             }
         })
-    })
 
+
+        const cancelBtn = document.querySelector(`#edit-cancel-${answerId}`);
+        cancelBtn.addEventListener('click', (event)=> {
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add('hidden')
+            answerContent.classList.remove("hidden");
+            editAnswerButton.classList.remove("hidden");
+            deleteAnswerButton.classList.remove("hidden");
+            // const content = document.getElementById(`${answerId}-edit-content`);
+            // console.log("Inner HTML", content.innerHTML)
+            // content.innerHTML = originalAns.innerHTML
+        })
+
+    })
 }
+
 
 
 
 //clicking cancel button: answerDisplay to appear, form disappear
 //click submit button of the edit form
+
+
+
+///Clicking Delete button
