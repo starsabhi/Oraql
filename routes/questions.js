@@ -59,7 +59,7 @@ router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandle
   // console.log(req.body)
   if (validatorErrors.isEmpty()) {
     await question.save();
-    res.redirect(`/questions/${newQuestion.id}`);
+    res.redirect(`/questions/${question.id}`);
   } else {
     const errors = validatorErrors.array().map(error => error.msg);
     console.log('error content ', question.content)
