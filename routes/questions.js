@@ -194,7 +194,30 @@ router.post('/:id(\\d+)/answers/new', requireAuth, answerValidators, csrfProtect
         data: req.body
       });
     }
+}));
 
-}))
+router.put(`/:questionId(\\d+)/answers/:answerId(\\d+)`, answerValidators, asyncHandler(async(req, res) => {
+  // console.log('from put route handler: ', req.body)
+  const answerId = parseInt(req.params.answerId, 10);
+  const answer = await db.Answer.findByPk(answerId)
+
+  answer.content = req.body.content
+  const validatorErrors = validationResult(req);
+
+    if (validatorErrors.isEmpty()) {
+      await answer.save();
+      res.json({
+          message: 'Success',
+          answer
+      })
+    } else {
+      const errors = validatorErrors.array().map(error => error.msg);
+      res.json({
+        message: 'Failure',
+        errors
+      });
+    }
+
+}));
 
 module.exports = router;
