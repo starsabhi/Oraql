@@ -1,0 +1,16 @@
+extends layout.pug
+include utils.pug
+block content
+  div(class='form-div')
+    h2(class='formTitle') Question:
+    div #{question.content}
+    hr(class='divider')
+    +validationErrorSummary(errors)
+    form(action=`/questions/${question.id}/answers/new` method='post')
+      input(type='hidden' name='_csrf' value=csrfToken)
+      label(for="content") My answer:
+      textarea(name="content" cols="30" rows="10") #{data.content}
+      div
+        a(href=`/questions/${question.id}/` class='formButton cancelButton') Cancel
+      div
+        button(type='submit' class='formButton') Submit

@@ -62,7 +62,6 @@ router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandle
     res.redirect(`/questions/${question.id}`);
   } else {
     const errors = validatorErrors.array().map(error => error.msg);
-    console.log('error content ', question.content)
     res.render("new-question", {
       title: "Ask a Question",
       question,
@@ -150,5 +149,52 @@ router.post('/:id(\\d+)/delete', requireAuth, csrfProtection, asyncHandler(async
 
 }));
 
+
+
+// ANSWER ROUTES
+
+router.get('/:id(\\d+)/answers/new', requireAuth, csrfProtection, asyncHandler(async(req, res) => {
+  const questionId = parseInt(req.params.id, 10);
+  const question = await db.Question.findByPk(questionId);
+  res.render('new-answer', { question, csrfToken: req.csrfToken(), title: "Answer", data: {}});
+}))
+
+const answerValidators = [
+  check('content')
+    .exists({ checkFalsy: true })
+    .withMessage('Answer cannot be empty')
+]
+
+router.post('/:id(\\d+)/answers/new', requireAuth, answerValidators, csrfProtection, asyncHandler(async(req, res) => {
+    // console.log(req.body.content)
+    const { content } = req.body;
+    const { userId } = req.session.auth;
+    const questionId = parseInt(req.params.id, 10);
+    const question = await db.Question.findByPk(questionId);
+
+    const answer = await db.Answer.build({
+      content,
+      userId,
+      questionId
+    });
+
+    const validatorErrors = validationResult(req);
+
+    if (validatorErrors.isEmpty()) {
+      await answer.save();
+      res.redirect(`/questions/${question.id}`);
+    } else {
+      const errors = validatorErrors.array().map(error => error.msg);
+      res.render('new-answer', {
+        title: "Answer",
+        question,
+        answer,
+        errors,
+        csrfToken: req.csrfToken(),
+        data: req.body
+      });
+    }
+
+}))
 
 module.exports = router;
