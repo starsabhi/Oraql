@@ -17,14 +17,14 @@ block content
                 div
                     div(id='answerDisplay')
                         p #{answer.User.username}
-                        p #{answer.content}
+                        p(id=`answer-content-${answer.id}`) #{answer.content}
                     if locals.authenticated
                         if answer.User.id === locals.user.id
-                            form(class='hidden' id=`edit-form-${answer.id}`) 
+                            form(class='hidden' id=`edit-form-${answer.id}`)
+                                div(class='errorList formError' id=`edit-errors-${answer.id}`)
                                 label Edit your answer:
-                                input(type="text" name="content" value=answer.content id=`${answer.id}-edit-content`)
-                                button(class="edit-cancel" id=`edit-cancel-${answer.id}`) Cancel 
+                                textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="30" rows="10") #{answer.content}
+                                button(class="edit-cancel" id=`edit-cancel-${answer.id}`) Cancel
                                 button(class=`q-${question.id} edit-submit` id=`edit-submit-${answer.id}`) Submit
                             button(type='submit' class='editBtn' id=`edit-${answer.id}`) Edit
                             button(type='submit' class='deleteBtn'  id=`delete-${answer.id}`) Delete
-                            

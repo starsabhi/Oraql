@@ -18,7 +18,7 @@ for (let i = 0; i < editButtons.length; i++) {
             answerContent.classList.add("hidden");
             editAnswerButton.classList.add("hidden");
             deleteAnswerButton.classList.add("hidden");
-        } 
+        }
 
         const submitBtn = document.getElementById(`edit-submit-${answerId}`);
 
@@ -31,16 +31,31 @@ for (let i = 0; i < editButtons.length; i++) {
               submitEvent.target.classList[0].split('-')[1],
               10
             );
-            console.log(questionId)
+            console.log(questionId);
 
-            const res = await fetch(`questions/${questionId}/answers/${answerId}`, {
+            const res = await fetch(`/questions/${questionId}/answers/${answerId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    title,
                     content
                 })
-            })
+            });
+
+            const data = await res.json();
+            if (data.message === 'Success') {
+                const contentEle = document.getElementById(`answer-content-${answerId}`)
+                contentEle.innerHTML = data.answer.content
+                form.classList.add("hidden");
+                answerContent.classList.remove("hidden");
+                editAnswerButton.classList.remove("hidden");
+                deleteAnswerButton.classList.remove("hidden");
+            } else {
+                if (data.message === 'Failure') {
+                    const errorDiv = document.getElementById(`edit-errors-${answerId}`);
+                    console.log(errorDiv)
+                    errorDiv.innerHTML = data.errors[0];
+                }
+            }
         })
     })
 
