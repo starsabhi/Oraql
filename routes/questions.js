@@ -6,8 +6,8 @@ const { check, validationResult } = require('express-validator');
 
 const db = require("../db/models");
 
-const checkPermissions = (question, currentUser) => {
-  if (question.userId !== currentUser.id) {
+const checkPermissions = (userFeature, currentUser) => {
+  if (userFeature.userId !== currentUser.id) {
     const err = new Error('Illegal operation.');
     err.status = 403; // Forbidden
     throw err;
@@ -196,10 +196,12 @@ router.post('/:id(\\d+)/answers/new', requireAuth, answerValidators, csrfProtect
     }
 }));
 
-router.put(`/:questionId(\\d+)/answers/:answerId(\\d+)`, answerValidators, asyncHandler(async(req, res) => {
+router.put(`/:questionId(\\d+)/answers/:answerId(\\d+)`, requireAuth, answerValidators, asyncHandler(async(req, res) => {
   // console.log('from put route handler: ', req.body)
   const answerId = parseInt(req.params.answerId, 10);
-  const answer = await db.Answer.findByPk(answerId)
+  const answer = await db.Answer.findByPk(answerId);
+
+  checkPermissions(answer, res.locals.user);
 
   answer.content = req.body.content
   const validatorErrors = validationResult(req);
@@ -220,6 +222,19 @@ router.put(`/:questionId(\\d+)/answers/:answerId(\\d+)`, answerValidators, async
 
 }));
 
+
+router.delete(`/:questionId(\\d+)/answers/:answerId(\\d+)`, requireAuth, asyncHandler(async (req, res) => {
+  const answerId = parseInt(req.params.answerId, 10);
+  const answer = await db.Answer.findByPk(answerId);
+
+  checkPermissions(answer, res.locals.user);
+
+  await answer.destroy();
+  res.json({
+    message: "Success"
+  })
+
+}))
 
 
 

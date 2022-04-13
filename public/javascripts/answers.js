@@ -98,16 +98,29 @@ const deleteBtns = document.querySelectorAll(".deleteAnsBtn");
 
 for (let i = 0; i < deleteBtns.length; i++) {
     const answerId = parseInt(deleteBtns[i].id.split('-')[1], 10);
+    const form = document.querySelector(`#edit-form-${answerId}`);
+    const editAnswerButton = document.querySelector(`#edit-${answerId}`);
+    const deleteAnswerButton = document.querySelector(`#delete-${answerId}`);
 
     deleteBtns[i].addEventListener('click', async (e) => {
+        const questionId = parseInt(
+            e.target.classList[0].split('-')[1],
+            10
+        );
+        console.log(questionId)
+
         const res = await fetch(`/questions/${questionId}/answers/${answerId}`, {
             method: "DELETE"
         })
-    })
 
-    const data = await res.json();
-    if (data.message === "Success") {
-        const answerContent = document.querySelector(`#answerDisplay-${answerId}`);
-        answerContent.remove();
-    }
+        const data = await res.json();
+        if (data.message === "Success") {
+            const answerContent = document.querySelector(`#answerDisplay-${answerId}`);
+            answerContent.remove();
+
+            form.remove();
+            editAnswerButton.remove();
+            deleteAnswerButton.remove();
+        }
+    })
 }
