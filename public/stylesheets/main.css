@@ -126,14 +126,7 @@ select {
   text-decoration: none;
   }
 
-.formButton:hover, .accountAnchor:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
 
-.formButton:active, .accountAnchor:active, .askbtn:hover {
-  transform: scale(.9);
-}
 
 .formError {
   color: rgb(255, 170, 113);
@@ -183,6 +176,7 @@ padding: 10px;
 .navObject {
 margin-left: 10px;
 margin-right: 10px;
+transition: .3s;
 }
 
 .searchBar {
@@ -192,3 +186,71 @@ margin-right: 10px;
 #less {
   font-size: 8pt;
 }
+
+.pText {
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+}
+
+.mainContentDiv {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.questionDiv {
+  background-color: rgb(73, 62, 84);
+  min-width: 400px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  /* padding: 20px; */
+  border: 2px solid rgb(25, 20, 28);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, .5);
+  padding: 20px;
+}
+
+.userTag {
+  margin: 12px;
+}
+
+.questionText {
+  text-decoration: none;
+  text-align: center;
+  margin: 15px;
+  color: white;
+  font-size: 1.5em;
+  transition: .3s;
+}
+
+.tag {
+color: rgb(25, 20, 28);
+font-size: 1em;
+font-weight: bold;
+border-radius: 30px;
+padding: 5px 10px;
+text-transform: uppercase;
+}
+
+
+
+.formButton:hover, .accountAnchor:hover, .questionText:hover, .hoverAnimate:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.formButton:active, .accountAnchor:active, .questionText:active, .hoverAnimate:active {
+  transform: scale(.9);
+}
+
+#spirit {
+  background-color: rgb(0, 255, 145);
+}
+
+/* continue tag colors here */
