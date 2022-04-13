@@ -42,7 +42,6 @@ Locally computer
 13 - npx sequelize-cli model:generate --name Answer --attributes content:text,userId:integer,questionId:integer
 14 - npx dotenv sequelize db:migrate
 
-
 npx dotenv sequelize db:drop
 
 npx dotenv sequelize db:create
@@ -54,5 +53,8 @@ npx sequelize seed:generate --name usersData
 npx sequelize seed:generate --name questionsData
 npx sequelize seed:generate --name answersData
 
-
 npx dotenv sequelize db:seed:all
+
+Heroku (pushing your code)
+heroku login
+heroku git:remote -a oraql
