@@ -119,13 +119,54 @@ select {
 .accountAnchor {
   font: 14px "Varela Round", Helvetica, Arial, sans-serif;
   text-align: center;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   transition: 0.3s;
+  /* margin-left: none; */
 }
 
 .accountAnchortext {
   text-decoration: none;
   font-weight: 550;
+  white-space: nowrap;
+  /* margin-left: none; */
+}
+
+#login {
+  margin-right: 0px;
+  /* border-right: white 2px solid; */
+  padding-right: 3px;
+}
+
+#navLine {
+  border: white 1px solid;
+  height: 30px;
+}
+
+#signup {
+  margin-left: 0px;
+  padding-left: 3px;
+}
+
+#signup a, #login a {
+  color: #e08ff0;
+}
+
+#demoUser {
+  background-color: white;
+  color: rgb(25, 20, 28);
+  border-radius: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navButton {
+  font: 14px "Varela Round", Helvetica, Arial, sans-serif;
+  color: white;
+  padding: 5px;
+  /* padding-left: 15px;
+  padding-right: 15px; */
+  font-size: 14pt;
+  transition: 0.3s;
 }
 
 .formTitle {
@@ -172,10 +213,12 @@ select {
   width: 100%;
   background-color: rgb(73, 62, 84);
   border-bottom: 2px solid rgb(25, 20, 28);
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .navbarContent {
-  width: 60%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -185,16 +228,24 @@ select {
 
 .navIcon {
   width: 35px;
+  transition: .3s;
 }
 
-.signandlogin > a {
+/* .signandlogin > a {
   padding: 10px;
+} */
+
+.signandlogin {
+  display: flex;
+  align-items: center;
 }
 
 .navObject {
   margin-left: 10px;
   margin-right: 10px;
   transition: 0.3s;
+  /* padding-left: 2%;
+  padding-right: 2%; */
 }
 
 
@@ -310,7 +361,8 @@ select {
 .accountAnchor:hover,
 .questionText:hover,
 .hoverAnimate:hover,
-.searchButton:hover {
+.searchButton:hover, 
+.navIcon:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -319,6 +371,7 @@ select {
 .accountAnchor:active,
 .questionText:active,
 .hoverAnimate:active,
-.searchButton:active {
+.searchButton:active,
+.navIcon:active {
   transform: scale(0.9);
 }

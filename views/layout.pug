@@ -14,26 +14,26 @@ html
         div(class='navObject')
           a(href="/")
             img(src="/images/oraql-home-icon.png" class='navIcon')
+        div(class='navObject hoverAnimate')
+          a(href='/questions/new' class='askbtn formButton') Ask Question
         div(class='navObject')
           form(action="/search/results" method="post" id="searchDiv")
             input(type="text" name="searchText" class="searchBar" placeholder='Search' maxlength='50')
             button(type='submit' class='searchButton')
               img(src="/images/searchicon.png" id="magGlass")
-        div(class='navObject hoverAnimate')
-          a(href='/questions/new' class='askbtn formButton') Ask Question
-        div
-          if locals.authenticated
-            div hello #{user.username}
-            form(action='/users/log-out', method='post')
-              button(type='submit') Log Out
-          else
-            div(class='signandlogin')
-              div(class='accountAnchor')
-                a(href='/users/log-in' class='accountAnchortext') Log In
-              div(class='accountAnchor')
-                a(href='/users/sign-up' class='accountAnchortext') Sign Up
-              div(class='accountAnchor')
-                a(href='/users/demo-login' class='accountAnchortext') Demo User
+        if locals.authenticated
+          div hello #{user.username}
+          form(action='/users/log-out', method='post')
+            button(type='submit') Log Out
+        else
+          div(class='signandlogin')
+            div(class='accountAnchor navObject' id='login')
+              a(href='/users/log-in' class='accountAnchortext navButton') Log In
+            div(id='navLine')
+            div(class='accountAnchor navObject' id='signup')
+              a(href='/users/sign-up' class='accountAnchortext navButton') Sign Up
+          div(class='accountAnchor navObject')
+            a(href='/users/demo-login' class='accountAnchortext navButton' id='demoUser') Demo User
     div(class="navSpacer")
         //- div(class='navObject')
         //-   button()
