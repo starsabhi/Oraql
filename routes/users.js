@@ -19,47 +19,53 @@ router.get('/sign-up', csrfProtection, (req, res) => {
 
 
 const userValidators = [
-  check('username')
+  check("username")
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a value for Username')
+    .withMessage("Please provide a value for Username")
     .isLength({ max: 20 })
-    .withMessage('Username must not be more than 20 characters long')
+    .withMessage("Username must not be more than 20 characters long")
     .custom((value) => {
-      return db.User.findOne({ where: { username: value } })
-        .then((user) => {
-          if (user) {
-            return Promise.reject('The provided Username is already in use by another account');
-          }
-        });
-    }),
-  check('email')
+      return db.User.findOne({ where: { username: value } }).then((user) => {
+        if (user) {
+          return Promise.reject(
+            "The provided Username is already in use by another account"
+          );
+        }
+      });
+    })
+    .custom((value) => !/^ *$/.test(value))
+    .withMessage("Username cannot be empty"),
+  check("email")
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a value for Email')
+    .withMessage("Please provide a value for Email")
     .isLength({ max: 255 })
-    .withMessage('Email Address must not be more than 255 characters long')
+    .withMessage("Email Address must not be more than 255 characters long")
     .isEmail()
-    .withMessage('Email Address is not a valid email')
+    .withMessage("Email Address is not a valid email")
     .custom((value) => {
-      return db.User.findOne({ where: { email: value } })
-        .then((user) => {
-          if (user) {
-            return Promise.reject('The provided Email Address is already in use by another account');
-          }
-        });
+      return db.User.findOne({ where: { email: value } }).then((user) => {
+        if (user) {
+          return Promise.reject(
+            "The provided Email Address is already in use by another account"
+          );
+        }
+      });
     }),
-  check('password')
+  check("password")
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a value for Password')
+    .withMessage("Please provide a value for Password")
     .isLength({ max: 30 })
-    .withMessage('Password must not be more than 30 characters long'),
-  check('confirmPassword')
+    .withMessage("Password must not be more than 30 characters long")
+    .custom((value) => !/^ *$/.test(value))
+    .withMessage("Password cannot be empty"),
+  check("confirmPassword")
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a value for Confirm Password')
+    .withMessage("Please provide a value for Confirm Password")
     .isLength({ max: 30 })
-    .withMessage('Confirm Password must not be more than 30 characters long')
+    .withMessage("Confirm Password must not be more than 30 characters long")
     .custom((value, { req }) => {
       if (value !== req.body.password) {
-        throw new Error('Confirm Password does not match Password');
+        throw new Error("Confirm Password does not match Password");
       }
       return true;
     }),
