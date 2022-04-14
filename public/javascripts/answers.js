@@ -18,7 +18,7 @@ for (let i = 0; i < editButtons.length; i++) {
     // console.log("originalAns",originalAns.innerHTML)
     // console.log(editButtons[i]);
     editButtons[i].addEventListener('click', e => {
-        content.value = originalAns.innerHTML;
+        content.value = originalAns.innerText;
         // console.log("new content Value", content.value)
         // console.log("Original HTML",originalAns.innerHTML)
         // console.log(e);
@@ -54,8 +54,13 @@ for (let i = 0; i < editButtons.length; i++) {
 
             const data = await res.json();
             if (data.message === 'Success') {
-                const contentEle = document.getElementById(`answer-content-${answerId}`)
-                contentEle.innerHTML = data.answer.content
+                let contentEle = document.getElementById(`answer-content-${answerId}`)
+                // contentEle.innerHTML = data.answer.content
+                let lines = data.answer.content.split('\n');
+                lines = lines.map(line => `<div>${line}</div>`)
+                contentEle.innerHTML = lines.join("");
+                // console.log(lines)
+
                 form.classList.add("hidden");
                 answerContent.classList.remove("hidden");
                 editAnswerButton.classList.remove("hidden");
@@ -112,12 +117,15 @@ for (let i = 0; i < deleteBtns.length; i++) {
 
         const data = await res.json();
         if (data.message === "Success") {
-            const answerContent = document.querySelector(`#answerDisplay-${answerId}`);
-            answerContent.remove();
+            // const answerContent = document.querySelector(`#answerDisplay-${answerId}`);
+            // answerContent.remove();
+            // form.remove();
+            // editAnswerButton.remove();
+            // deleteAnswerButton.remove();
 
-            form.remove();
-            editAnswerButton.remove();
-            deleteAnswerButton.remove();
+            const answerDiv = document.querySelector(`#answerDiv-${answerId}`);
+            answerDiv.remove();
+
         }
     })
 }

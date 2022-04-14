@@ -16,10 +16,12 @@ block content
                 span ##{question.Tag.tagName}
                 a(href=`/questions/${question.id}/answers/new`) Answer
                 each answer in question.Answers
-                    div(class="ansDiv")
+                    div(class="ansDiv" id=`answerDiv-${answer.id}`)
                         div(id=`answerDisplay-${answer.id}`)
                             p #{answer.User.username}
-                            p(id=`answer-content-${answer.id}`) #{answer.content}
+                            div(id=`answer-content-${answer.id}`) 
+                                each line in answer.content.split('\n')
+                                    div= line
                         if locals.authenticated
                             if answer.User.id === locals.user.id
                                 form(class='hidden' id=`edit-form-${answer.id}`)

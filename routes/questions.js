@@ -33,14 +33,16 @@ router.get("/new", requireAuth, csrfProtection, asyncHandler(async(req, res) => 
 }));
 
 const questionValidators = [
-  check('content')
+  check("content")
     .exists({ checkFalsy: true })
-    .withMessage('Question cannot be empty')
+    .withMessage("Question cannot be empty")
     .isLength({ max: 140 })
-    .withMessage('Question cannot be more than 140 characters long'),
-  check('tagId')
+    .withMessage("Question cannot be more than 140 characters long")
+    .custom((value) => !/^ *$/.test(value))
+    .withMessage("Question cannot be empty"),
+  check("tagId")
     .exists({ checkFalsy: true })
-    .withMessage('Please select a tag for your question')
+    .withMessage("Please select a tag for your question"),
 ];
 
 router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandler(async(req, res) => {
@@ -160,10 +162,12 @@ router.get('/:id(\\d+)/answers/new', requireAuth, csrfProtection, asyncHandler(a
 }))
 
 const answerValidators = [
-  check('content')
+  check("content")
     .exists({ checkFalsy: true })
-    .withMessage('Answer cannot be empty')
-]
+    .withMessage("Answer cannot be empty")
+    .custom((value) => !/^ *$/.test(value))
+    .withMessage("Answer cannot be empty"),
+];
 
 router.post('/:id(\\d+)/answers/new', requireAuth, answerValidators, csrfProtection, asyncHandler(async(req, res) => {
     // console.log(req.body.content)
@@ -177,6 +181,7 @@ router.post('/:id(\\d+)/answers/new', requireAuth, answerValidators, csrfProtect
       userId,
       questionId
     });
+    
 
     const validatorErrors = validationResult(req);
 
