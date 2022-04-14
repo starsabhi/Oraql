@@ -2,29 +2,31 @@ extends layout.pug
 include utils.pug
 block content
     script(src="/javascripts/answers.js" type="module")
-    div
-        h2 #{question.content}
-        div #{question.User.username}
-        div
-            if locals.authenticated
-                if question.User.id === locals.user.id
-                    a(href=`/questions/${question.id}/edit`) Edit
-                    form(action=`/questions/${question.id}/delete`, method='get')
-                        button(type='submit') Delete
-            span ##{question.Tag.tagName}
-            a(href=`/questions/${question.id}/answers/new`) Answer
-            each answer in question.Answers
-                div
-                    div(id=`answerDisplay-${answer.id}`)
-                        p #{answer.User.username}
-                        p(id=`answer-content-${answer.id}`) #{answer.content}
-                    if locals.authenticated
-                        if answer.User.id === locals.user.id
-                            form(class='hidden' id=`edit-form-${answer.id}`)
-                                div(class='errorList formError' id=`edit-errors-${answer.id}`)
-                                label Edit your answer:
-                                textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="30" rows="10")
-                                button(class="edit-cancel" id=`edit-cancel-${answer.id}`) Cancel
-                                button(class=`q-${question.id} edit-submit` id=`edit-submit-${answer.id}`) Submit
-                            button(type='submit' class='editBtn' id=`edit-${answer.id}`) Edit
-                            button(type='submit' class='deleteBtn'  id=`delete-${answer.id}`) Delete
+    div(class="mainContentDiv")
+        div(class="questionDiv")
+            div(class="qContent")
+                h2(class="questionText") #{question.content}
+            div #{question.User.username}
+            div
+                if locals.authenticated
+                    if question.User.id === locals.user.id
+                        a(href=`/questions/${question.id}/edit`) Edit
+                        form(action=`/questions/${question.id}/delete`, method='get')
+                            button(type='submit') Delete
+                span ##{question.Tag.tagName}
+                a(href=`/questions/${question.id}/answers/new`) Answer
+                each answer in question.Answers
+                    div(class="ansDiv")
+                        div(id=`answerDisplay-${answer.id}`)
+                            p #{answer.User.username}
+                            p(id=`answer-content-${answer.id}`) #{answer.content}
+                        if locals.authenticated
+                            if answer.User.id === locals.user.id
+                                form(class='hidden' id=`edit-form-${answer.id}`)
+                                    div(class='errorList formError' id=`edit-errors-${answer.id}`)
+                                    label Edit your answer:
+                                    textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="30" rows="10")
+                                    button(class="edit-cancel" id=`edit-cancel-${answer.id}`) Cancel
+                                    button(class=`q-${question.id} edit-submit` id=`edit-submit-${answer.id}`) Submit
+                                button(type='submit' class='editAnsBtn' id=`edit-${answer.id}`) Edit
+                                button(type='submit' class=`q-${question.id} deleteAnsBtn`  id=`delete-${answer.id}`) Delete

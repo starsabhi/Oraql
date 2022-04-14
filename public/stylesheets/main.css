@@ -1,9 +1,9 @@
 body {
-  padding: 50px;
+  /* padding: 400px; */
   background-color: rgb(37, 33, 43);
-  font: 14px 'Varela Round', Helvetica, Arial, sans-serif;
+  font: 14px "Varela Round", Helvetica, Arial, sans-serif;
   color: white;
-  background-image: url('/images/oraql-login-background.png');
+  background-image: url("/images/oraql-login-background.png");
   background-size: contain;
   background-repeat: repeat;
   height: 100%;
@@ -17,8 +17,21 @@ a {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, a, ol, li, ul, div, span,
-body, header, nav {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+ol,
+li,
+ul,
+div,
+span,
+body,
+header,
+nav {
   font-size: 1rem;
   /* color: inherit; */
   /* background-color: transparent; */
@@ -26,6 +39,10 @@ body, header, nav {
   padding: 0;
   outline: 0;
   font-weight: normal;
+}
+
+.navSpacer {
+  height: 50px;
 }
 
 h1 {
@@ -40,17 +57,19 @@ h1 {
 }
 
 .form-div {
-background-color: rgb(73, 62, 84);
-width: 450px;
-margin-left: auto;
+  background-color: rgb(73, 62, 84);
+  width: 450px;
+  /* margin-left: auto;
 margin-right: auto;
-border-radius: 10px;
-/* padding: 20px; */
-border: 2px solid rgb(25, 20, 28);
-display: flex;
-flex-direction: column;
-align-items: center;
-box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, .5);
+margin-top: 50px; */
+  margin: 50px auto 0;
+  border-radius: 10px;
+  padding: 20px;
+  border: 2px solid rgb(25, 20, 28);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
 }
 
 label {
@@ -60,7 +79,7 @@ label {
 }
 
 input {
-  font: 20px 'Varela Round', Helvetica, Arial, sans-serif;
+  font: 20px "Varela Round", Helvetica, Arial, sans-serif;
   width: 100%;
   border-radius: 5px;
   border: none;
@@ -68,14 +87,14 @@ input {
 }
 
 textarea {
-  font: 20px 'Varela Round', Helvetica, Arial, sans-serif;
+  font: 20px "Varela Round", Helvetica, Arial, sans-serif;
   border-radius: 5px;
   border: none;
   padding: 4px;
 }
 
 select {
-  font: 20px 'Varela Round', Helvetica, Arial, sans-serif;
+  font: 20px "Varela Round", Helvetica, Arial, sans-serif;
   width: 50%;
   border-radius: 5px;
   border: none;
@@ -83,7 +102,7 @@ select {
 }
 
 .formButton {
-  font: 14px 'Varela Round', Helvetica, Arial, sans-serif;
+  font: 14px "Varela Round", Helvetica, Arial, sans-serif;
   background-color: rgb(255, 219, 128);
   color: black;
   padding: 5px;
@@ -94,14 +113,14 @@ select {
   padding-left: 15px;
   padding-right: 15px;
   font-size: 14pt;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .accountAnchor {
-  font: 14px 'Varela Round', Helvetica, Arial, sans-serif;
+  font: 14px "Varela Round", Helvetica, Arial, sans-serif;
   text-align: center;
   margin-bottom: 25px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .accountAnchortext {
@@ -118,15 +137,13 @@ select {
   white-space: nowrap;
   background-color: rgb(255, 219, 128);
   text-decoration: none;
-  }
+}
 
-  .cancelButton {
+.cancelButton {
   white-space: nowrap;
   background-color: white;
   text-decoration: none;
-  }
-
-
+}
 
 .formError {
   color: rgb(255, 170, 113);
@@ -149,14 +166,15 @@ select {
   width: 80px;
 }
 
-
 .navBar {
+  position: fixed;
+  top: 0px;
   width: 100%;
   background-color: rgb(73, 62, 84);
   border-bottom: 2px solid rgb(25, 20, 28);
 }
 
-.navbarContent{
+.navbarContent {
   width: 60%;
   display: flex;
   align-items: center;
@@ -169,14 +187,14 @@ select {
   width: 35px;
 }
 
-.signandlogin > a{
-padding: 10px;
+.signandlogin > a {
+  padding: 10px;
 }
 
 .navObject {
-margin-left: 10px;
-margin-right: 10px;
-transition: .3s;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: 0.3s;
 }
 
 .searchBar {
@@ -199,7 +217,8 @@ transition: .3s;
   margin-right: auto;
 }
 
-.questionDiv {
+.questionDiv,
+.ansDiv {
   background-color: rgb(73, 62, 84);
   min-width: 400px;
   max-width: 700px;
@@ -212,7 +231,7 @@ transition: .3s;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, .5);
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
   padding: 20px;
 }
 
@@ -226,29 +245,35 @@ transition: .3s;
   margin: 15px;
   color: white;
   font-size: 1.5em;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .tag {
-color: rgb(25, 20, 28);
-font-size: 1em;
-font-weight: bold;
-border-radius: 30px;
-padding: 5px 10px;
-text-transform: uppercase;
+  color: rgb(25, 20, 28);
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 5px 10px;
+  text-transform: uppercase;
 }
 
 .hidden {
-    display: none
+  display: none;
 }
 
-.formButton:hover, .accountAnchor:hover, .questionText:hover, .hoverAnimate:hover {
+.formButton:hover,
+.accountAnchor:hover,
+.questionText:hover,
+.hoverAnimate:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 
-.formButton:active, .accountAnchor:active, .questionText:active, .hoverAnimate:active {
-  transform: scale(.9);
+.formButton:active,
+.accountAnchor:active,
+.questionText:active,
+.hoverAnimate:active {
+  transform: scale(0.9);
 }
 
 #spirit {
@@ -256,3 +281,12 @@ text-transform: uppercase;
 }
 
 /* continue tag colors here */
+
+.qContent {
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.ansDiv {
+  background-color: rgb(37, 33, 43);
+}
