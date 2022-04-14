@@ -471,12 +471,60 @@ select {
 
 }
 
+.questionInnerContent {
+  width: 600px;
+}
+
+.userDate {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0px;
+
+}
+
+.answerContent {
+  width: 100%;
+  text-align: left;
+}
+
+
+.userDate > div {
+ color: #e08ff0;
+ font-size: 10pt;
+}
+
+
+#ansdiv {
+  width: 100%;
+  border:rgb(73, 62, 84) solid 1px;
+  background-color: rgb(73, 62, 84);
+}
+
+.editAnsBtn, .deleteAnsBtn {
+border: none;
+background-color: transparent;
+color: white;
+transition: .3s;
+font-size: 12pt;
+}
+
+
+.editdeleteAns {
+display: flex;
+justify-content: center;
+gap: 30%
+}
+
+
 .formButton:hover,
 .accountAnchor:hover,
 .questionText:hover,
 .hoverAnimate:hover,
 .searchButton:hover,
-.navIcon:hover {
+.navIcon:hover,
+.editAnsBtn:hover,
+.deleteAnsBtn:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -486,6 +534,8 @@ select {
 .questionText:active,
 .hoverAnimate:active,
 .searchButton:active,
-.navIcon:active {
+.navIcon:active,
+.editAnsBtn:active,
+.deleteAnsBtn:active {
   transform: scale(0.9);
 }
