@@ -197,15 +197,13 @@ select {
   transition: 0.3s;
 }
 
-.searchBar {
-  min-width: 200px;
-}
 
 #less {
   font-size: 8pt;
 }
 
 .pText {
+  margin-top: 50px;
   font-size: 1.5em;
   color: white;
   text-align: center;
@@ -261,20 +259,6 @@ select {
   display: none;
 }
 
-.formButton:hover,
-.accountAnchor:hover,
-.questionText:hover,
-.hoverAnimate:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-.formButton:active,
-.accountAnchor:active,
-.questionText:active,
-.hoverAnimate:active {
-  transform: scale(0.9);
-}
 
 #spirit {
   background-color: rgb(0, 255, 145);
@@ -289,4 +273,52 @@ select {
 
 .ansDiv {
   background-color: rgb(37, 33, 43);
+}
+
+.searchBar {
+  min-width: 200px;
+}
+
+.noSearchText {
+  text-align: center;
+  color: #e08ff0;
+}
+
+#searchDiv {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.searchButton {
+  /* background-color: none; */
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+#magGlass {
+  height: 20px;
+  margin-top: 3px;
+
+}
+
+.formButton:hover,
+.accountAnchor:hover,
+.questionText:hover,
+.hoverAnimate:hover,
+.searchButton:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.formButton:active,
+.accountAnchor:active,
+.questionText:active,
+.hoverAnimate:active,
+.searchButton:active {
+  transform: scale(0.9);
 }
