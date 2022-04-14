@@ -104,7 +104,7 @@ select {
 .formButton {
   font: 14px "Varela Round", Helvetica, Arial, sans-serif;
   background-color: rgb(255, 219, 128);
-  color: black;
+  color: rgb(37, 33, 43);
   padding: 5px;
   margin: 20px;
   margin-left: 230px;
@@ -139,7 +139,7 @@ select {
 
 #navLine {
   border: white 1px solid;
-  height: 30px;
+  height: 24px;
 }
 
 #signup {
@@ -147,8 +147,24 @@ select {
   padding-left: 3px;
 }
 
-#signup a, #login a {
+#signup a, #login a, #navUser {
   color: #e08ff0;
+}
+
+#navUser {
+  font-size: 14pt;
+  margin-left: 10px;
+  margin-right: 16px;
+}
+
+#logOut {
+  background-color: white;
+  color: rgb(25, 20, 28);
+  border-radius: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  cursor: pointer;
 }
 
 #demoUser {
@@ -264,6 +280,7 @@ select {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 60px;
 }
 
 .questionDiv,
@@ -286,6 +303,12 @@ select {
 
 .userTag {
   margin: 12px;
+  color:#e08ff0;
+}
+
+.askedBy {
+  color: rgb(37, 33, 43);
+  font-weight: bold;
 }
 
 .questionText {
@@ -297,12 +320,54 @@ select {
   transition: 0.3s;
 }
 
+.questionTextStatic {
+  text-decoration: none;
+  text-align: center;
+  margin: 15px;
+  color: white;
+  font-size: 1.5em;
+}
+
+.questionMetaDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.editDeleteAnswer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.editDelete {
+  display: flex;
+  width: 170px;
+  justify-content: space-around;
+}
+
+#editBtn {
+  background-color: white;
+}
+
+#deleteBtn {
+  background-color: rgb(255, 180, 172);
+}
+
+#answerBtn {
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* float: right; */
+}
+
 .tag {
   color: rgb(25, 20, 28);
   font-size: 1em;
   font-weight: bold;
   border-radius: 30px;
-  padding: 5px 10px;
+  padding: 2px 10px;
   text-transform: uppercase;
 }
 
@@ -310,9 +375,56 @@ select {
   display: none;
 }
 
+#alien {
+  background-color: rgb(0, 255, 98);
+}
+
+#angel {
+  background-color: rgb(0, 242, 255);
+}
+
+#demon {
+  background-color: rgb(163, 0, 0);
+}
+
+#divination {
+  background-color: rgb(209, 43, 255);
+}
+
+#heaven {
+  background-color: rgb(255, 247, 104);
+}
+
+#karma {
+  background-color: rgb(255, 171, 245);
+}
+
+#magic {
+  background-color: rgb(255, 187, 0);
+}
+
+#prophecy {
+  background-color: rgb(0, 102, 255);
+}
+
+#reincarnation {
+  background-color: rgb(255, 255, 255);
+}
+
+#religion {
+  background-color: rgb(255, 111, 0);
+}
 
 #spirit {
-  background-color: rgb(0, 255, 145);
+  background-color: rgb(119, 131, 136);
+}
+
+#underworld {
+  background-color: rgb(255, 60, 60);
+}
+
+#witchcraft {
+  background-color: rgb(129, 0, 221);
 }
 
 /* continue tag colors here */
@@ -324,6 +436,8 @@ select {
 
 .ansDiv {
   background-color: rgb(37, 33, 43);
+  margin-top: 20px;
+  min-width: 600px;
 }
 
 .searchBar {
@@ -361,7 +475,7 @@ select {
 .accountAnchor:hover,
 .questionText:hover,
 .hoverAnimate:hover,
-.searchButton:hover, 
+.searchButton:hover,
 .navIcon:hover {
   transform: scale(1.1);
   cursor: pointer;

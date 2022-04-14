@@ -5,30 +5,35 @@ block content
     div(class="mainContentDiv")
         div(class="questionDiv")
             div(class="qContent")
-                h2(class="questionText") #{question.content}
-            div #{question.User.username}
-            div
+                h2(class="questionTextStatic") #{question.content}
+                div(class="questionMetaDiv")
+                    div
+                        span(class="askedBy") Asked by:
+                        span(class="userTag") #{question.User.username}
+                    span(class="userTag tag" id=`${question.Tag.tagName}`) ##{question.Tag.tagName}
+            div(class='editDeleteAnswer')
+                a(href=`/questions/${question.id}/answers/new` class='askbtn formButton' id='answerBtn') Answer
                 if locals.authenticated
                     if question.User.id === locals.user.id
-                        a(href=`/questions/${question.id}/edit`) Edit
-                        form(action=`/questions/${question.id}/delete`, method='get')
-                            button(type='submit') Delete
-                span ##{question.Tag.tagName}
-                a(href=`/questions/${question.id}/answers/new`) Answer
-                each answer in question.Answers
-                    div(class="ansDiv" id=`answerDiv-${answer.id}`)
-                        div(id=`answerDisplay-${answer.id}`)
-                            p #{answer.User.username}
-                            div(id=`answer-content-${answer.id}`) 
-                                each line in answer.content.split('\n')
-                                    div= line
-                        if locals.authenticated
-                            if answer.User.id === locals.user.id
-                                form(class='hidden' id=`edit-form-${answer.id}`)
-                                    div(class='errorList formError' id=`edit-errors-${answer.id}`)
-                                    label Edit your answer:
-                                    textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="30" rows="10")
-                                    button(class="edit-cancel" id=`edit-cancel-${answer.id}`) Cancel
-                                    button(class=`q-${question.id} edit-submit` id=`edit-submit-${answer.id}`) Submit
-                                button(type='submit' class='editAnsBtn' id=`edit-${answer.id}`) Edit
-                                button(type='submit' class=`q-${question.id} deleteAnsBtn`  id=`delete-${answer.id}`) Delete
+                        div(class='editDelete')
+                            a(href=`/questions/${question.id}/edit` class='askbtn formButton' id='editBtn') Edit
+                            form(action=`/questions/${question.id}/delete`, method='get')
+                                button(type='submit' class='askbtn formButton' id='deleteBtn') Delete
+            each answer in answers
+                div(class="ansDiv" id=`answerDiv-${answer.id}`)
+                    div(id=`answerDisplay-${answer.id}`)
+                        p #{answer.User.username}
+                        p #{answer.date}
+                        div(id=`answer-content-${answer.id}`)
+                            each line in answer.content.split('\n')
+                                div= line
+                    if locals.authenticated
+                        if answer.User.id === locals.user.id
+                            form(class='hidden' id=`edit-form-${answer.id}`)
+                                div(class='errorList formError' id=`edit-errors-${answer.id}`)
+                                label Edit your answer:
+                                textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="30" rows="10")
+                                button(class="edit-cancel" id=`edit-cancel-${answer.id}`) Cancel
+                                button(class=`q-${question.id} edit-submit` id=`edit-submit-${answer.id}`) Submit
+                            button(type='submit' class='editAnsBtn' id=`edit-${answer.id}`) Edit
+                            button(type='submit' class=`q-${question.id} deleteAnsBtn`  id=`delete-${answer.id}`) Delete

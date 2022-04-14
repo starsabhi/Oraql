@@ -78,10 +78,32 @@ router.post("/new", requireAuth, csrfProtection, questionValidators, asyncHandle
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
   const questionId = parseInt(req.params.id, 10);
-  const question = await db.Question.findByPk(questionId, { include: [db.User, { model: db.Answer, include: db.User }, db.Tag]});
+  const question = await db.Question.findByPk(questionId, {
+    include: [
+      db.User, {
+      model: db.Answer, include: db.User }, db.Tag]});
+
+  const answers = question.Answers;
+
+  answers.sort((a, b)=> {
+    const keyA = new Date(a.createdAt);
+    const keyB = new Date(b.createdAt);
+    console.log(keyA)
+    console.log(keyB)
+    if (keyA < keyB) {
+      return -1;
+    } else {
+      return 1;
+    }
+  });
+
+  answers.forEach((answer) => {
+    answer.date = answer.createdAt.toDateString();
+  })
+  // console.log(answers)
   // console.log(question)
   // console.log(question.Answers[0].User.username);
-  res.render('question-detail', { title: question.content, question })
+  res.render('question-detail', { title: question.content, question, answers })
 
 }))
 
@@ -181,7 +203,7 @@ router.post('/:id(\\d+)/answers/new', requireAuth, answerValidators, csrfProtect
       userId,
       questionId
     });
-    
+
 
     const validatorErrors = validationResult(req);
 
