@@ -15,8 +15,9 @@ html
           a(href="/")
             img(src="/images/oraql-home-icon.png" class='navIcon')
         div(class='navObject')
-          form(action="/search" method="get")
-            input(type="text" class="searchBar")
+          form(action="/search/results" method="post")
+            input(type="text" name="searchText" class="searchBar" placeholder='Search' maxlength='50')
+            button(type='submit' class='searchButton' ) Search
         div(class='navObject hoverAnimate')
           a(href='/questions/new' class='askbtn formButton') Ask Question
         div
