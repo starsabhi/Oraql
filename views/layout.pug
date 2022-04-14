@@ -22,9 +22,9 @@ html
             button(type='submit' class='searchButton')
               img(src="/images/searchicon.png" id="magGlass")
         if locals.authenticated
-          div hello #{user.username}
-          form(action='/users/log-out', method='post')
-            button(type='submit') Log Out
+          div(class='accountAnchortext' id='navUser') #{user.username}
+          form(action='/users/log-out', method='post' class='hoverAnimate navButton')
+            button(type='submit' class='accountAnchortext navButton' id='logOut') Log Out
         else
           div(class='signandlogin')
             div(class='accountAnchor navObject' id='login')
