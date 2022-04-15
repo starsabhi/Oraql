@@ -811,6 +811,16 @@ select {
   transition: .3s;
 }
 
+.tagNoClick {
+  color: rgb(25, 20, 28);
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
 .tag > a {
   color: rgb(25, 20, 28);
   font-size: 1em;
@@ -880,7 +890,8 @@ g > path {
 .navIcon:hover,
 .editAnsBtn:hover,
 .deleteAnsBtn:hover,
-.formButtonNoMargin:hover {
+.formButtonNoMargin:hover,
+.tag:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -893,6 +904,7 @@ g > path {
 .navIcon:active,
 .editAnsBtn:active,
 .deleteAnsBtn:active,
-.formButtonNoMargin:active {
+.formButtonNoMargin:active,
+.tag:active {
   transform: scale(0.9);
 }
