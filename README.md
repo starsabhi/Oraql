@@ -83,7 +83,7 @@ Logged in users can:
 ![image](https://user-images.githubusercontent.com/95883222/163648383-7313edd3-7919-4825-8876-8fdd55133094.png)
 
 ### Search Results Page
-![image](https://user-images.githubusercontent.com/95883222/163648473-96310fdc-284a-4340-aafd-2fd84bd4be4a.png)
+![image](https://user-images.githubusercontent.com/95883222/163649044-f604135e-cbef-47e1-a51b-ea7dbea54a6f.png)
 
 
 
