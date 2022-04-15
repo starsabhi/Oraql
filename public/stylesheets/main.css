@@ -430,7 +430,8 @@ select {
 .questionDivMainPage {
   background-color: rgb(73, 62, 84);
   /* min-width: 400px; */
-  width: 700px;
+  /* width: 700px; */
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 16px;
@@ -444,7 +445,7 @@ select {
   padding: 20px;
   border: 1px solid rgb(25, 20, 28);
   box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2))
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2));
 }
 
 .questionDivTagPage {
@@ -498,7 +499,7 @@ select {
 }
 
 .userTag {
-  margin: 12px;
+  margin-left: 7px;
   /* color:#e08ff0; */
 }
 
@@ -509,6 +510,10 @@ select {
 .askedBy {
   color: rgb(37, 33, 43);
   font-weight: bold;
+  /* vertical-align: middle; */
+  display: flex;
+  align-items: center;
+
 }
 
 .questionText {
@@ -753,6 +758,8 @@ select {
 .userTagDiv {
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .formButton:hover,
@@ -1093,4 +1100,7 @@ animation: strokeanim 3s ease-out forwards;
     stroke-dashoffset:-22;
    stroke-dasharray: 20 2;
   }
+
+.askedUser {
+  display: flex;
 }

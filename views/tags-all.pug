@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div(class="mainContentDiv")
+    div(class="questionDivTagPage") View Questions by Tags:
+        div(class='questionDivTags')
+            each tag in tags
+                span(class="userTag tag searchTag" id=`${tag.tagName}`)
+                    a(href=`/tags/${tag.id}`) ##{tag.tagName}

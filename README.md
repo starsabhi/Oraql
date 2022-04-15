@@ -41,12 +41,6 @@ Try asking and answering questions at our live site: [Oraql](https://oraql.herok
 
 7. You can use the Demo user or create an account
 
-# Live
-
-# Database Schema
-
-![image](https://user-images.githubusercontent.com/95883222/163646085-82bc0651-9784-4b96-a7f8-e2a7f05b82b7.png)
-
 
 
 ### Features
