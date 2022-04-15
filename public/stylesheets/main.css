@@ -458,6 +458,10 @@ select {
   min-width: 200px;
 }
 
+.searchBar:focus {
+  outline: none;
+}
+
 .noSearchText {
   text-align: center;
   color: #e08ff0;
@@ -594,7 +598,6 @@ gap: 30%
 
 .logoSvg {
   animation: logoBlur 15s ease-in-out alternate infinite;
-
 }
 
 g > path {
@@ -602,16 +605,16 @@ g > path {
 }
 
 @keyframes logoBlur {
- 0% {
+  0% {
     filter: drop-shadow(0px 0px 0px rgba(73, 62, 84, 0));
   }
   49% {
     filter: drop-shadow(0px 0px 0px rgba(73, 62, 84, 0));
   }
   50% {
-    filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 1));
+    filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0));
   }
-  75% {
+  65% {
     filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 1));
   }
   100% {
@@ -626,7 +629,7 @@ g > path {
    50% {
      fill: white;
    }
-   75% {
+   65% {
     fill: rgba(73, 62, 84);
    }
    100% {
