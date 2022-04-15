@@ -11,7 +11,8 @@ block content
                         div
                             span(class="askedBy") Asked by:
                             span(class="userTag") #{question.User.username}
-                        span(class="userTag tag" id=`${question.Tag.tagName}`) ##{question.Tag.tagName}
+                        span(class="userTag tag" id=`${question.Tag.tagName}`)
+                            a(href=`/tags/${question.Tag.id}`) ##{question.Tag.tagName}
                 div(class='editDeleteAnswer')
                     a(href=`/questions/${question.id}/answers/new` class='askbtn formButton' id='answerBtn') Answer
                     if locals.authenticated

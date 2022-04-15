@@ -2,7 +2,7 @@ extends layout
 
 block content
   div(class="mainContentDiv")
-    p(class="pText") Search Results For: "#{search}"
+    p(class="pText") Questions for tag: "#{tag.tagName}"
     if questions.length
         each question in questions
             div(class="questionDiv")
@@ -10,7 +10,7 @@ block content
                 div
                     span(class="askedBy") User:
                     span(class="userTag") #{question.User.username}
-                    span(class="userTag tag" id=`${question.Tag.tagName}`)
+                    span(class="userTag tag" id=`${question.Tag.tagName}`) 
                         a(href=`/tags/${question.Tag.id}`) ##{question.Tag.tagName}
     else
-        div(class="noSearchText") The truth is out there. Just not here. Try searching for something else 👽👻
+        div(class="noSearchText") No questions found under "#{tag.tagName}" yet 👽👻
