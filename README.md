@@ -70,9 +70,6 @@ Logged in users can:
 
 ![image](https://user-images.githubusercontent.com/95883222/163636079-46fe6865-8996-4a02-b1bb-ec2c782e26e8.png)
 
-### User Log In Page
-
-![image](https://user-images.githubusercontent.com/95883222/163647096-86e80eea-8fc7-4412-9e9d-be6d771b9774.png)
 
 ### User Sign Up Page
 
@@ -87,10 +84,6 @@ Logged in users can:
 
 ### Search Results Page
 ![image](https://user-images.githubusercontent.com/95883222/163648473-96310fdc-284a-4340-aafd-2fd84bd4be4a.png)
-
-### List of Question with Tags
-
-![image](https://user-images.githubusercontent.com/95883222/163648721-813593d0-e1fc-4092-a4ea-8199e404e4e7.png)
 
 
 
