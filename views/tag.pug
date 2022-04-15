@@ -10,7 +10,6 @@ block content
                 div
                     span(class="askedBy") User:
                     span(class="userTag") #{question.User.username}
-                    span(class="userTag tag" id=`${question.Tag.tagName}`) 
-                        a(href=`/tags/${question.Tag.id}`) ##{question.Tag.tagName}
+                    span(class="userTag tag" id=`${question.Tag.tagName}`) ##{question.Tag.tagName}
     else
         div(class="noSearchText") No questions found under "#{tag.tagName}" yet 👽👻
