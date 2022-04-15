@@ -88,13 +88,9 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
   answers.sort((a, b)=> {
     const keyA = new Date(a.createdAt);
     const keyB = new Date(b.createdAt);
-    console.log(keyA)
-    console.log(keyB)
-    if (keyA < keyB) {
-      return -1;
-    } else {
-      return 1;
-    }
+    // console.log(keyA)
+    // console.log(keyB)
+    return keyA < keyB ? -1 : 1;
   });
 
   answers.forEach((answer) => {
