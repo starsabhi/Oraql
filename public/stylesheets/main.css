@@ -278,8 +278,15 @@ select {
   z-index: 1;
 }
 
+.footerContent {
+  display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
+}
+
 .footerSpacer {
-  height: 70px;
+  height: 110px;
 }
 
 .footerIcons {
@@ -292,6 +299,8 @@ select {
 .developerList {
   display: flex;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .devDiv {
