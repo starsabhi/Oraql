@@ -1,5 +1,8 @@
+html, body {
+  min-height: 100%;
+}
+
 body {
-  /* padding: 400px; */
   font: 14px "Varela Round", Helvetica, Arial, sans-serif;
   color: white;
   background-color: rgb(37, 33, 43);
@@ -8,6 +11,7 @@ body {
   background-repeat: repeat;
   position: relative;
   min-height: 100vh;
+  width: 100%;
 }
 
 a {
@@ -44,6 +48,7 @@ nav {
 
 .navSpacer {
   height: 80px;
+  width: 100%
 }
 
 h1 {
@@ -244,7 +249,7 @@ select {
 .divider {
   margin-top: 10px;
   width: 78%;
-  border: solid 1px rgb(51, 37, 58);
+  border: solid 1px rgb(70, 52, 79);
 }
 
 .smallOraqlLogo {
@@ -267,26 +272,33 @@ select {
 .footerBar {
   position: absolute;
   bottom: 0px;
-  width: 100%;
+  left: 0;
+  right: 0;
+  max-width: 100%;
   height: fit-content;
   background-color: rgb(25, 20, 28);
   padding-top: 10px;
-  padding-bottom: 10px;
   border-top: 1px solid rgb(25, 20, 28);
   box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2));
   z-index: 1;
+  min-width: 700px;
 }
 
 .footerContent {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .footerSpacer {
   height: 110px;
+  width: 100%
 }
 
 .footerIcons {
@@ -294,6 +306,7 @@ select {
   gap: 10px;
   align-items: center;
   justify-content: center;
+  /* margin-top: 10px; */
 }
 
 .developerList {
@@ -301,6 +314,7 @@ select {
   gap: 10px;
   justify-content: center;
   align-items: center;
+  margin-bottom: -10px;
 }
 
 .devDiv {
@@ -316,10 +330,18 @@ select {
   align-items: center;
 }
 
+.smallFont {
+  font-size: 8pt;
+}
+
 
 #expressIcon {
   filter: invert();
   margin-top: 6px;
+}
+
+.githubIcon {
+  filter: invert();
 }
 
 .navbarContent {
@@ -363,20 +385,43 @@ select {
   font-size: 1.5em;
   color: white;
   text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mainContentDiv {
-  width: 100%;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
 }
 
-.questionDiv,
-.ansDiv {
+.questionDiv {
   background-color: rgb(73, 62, 84);
-  min-width: 400px;
-  max-width: 700px;
+  /* min-width: 400px; */
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  /* padding: 20px; */
+  border: 2px solid rgb(25, 20, 28);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border: 1px solid rgb(25, 20, 28);
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2))
+}
+
+
+.ansDiv {
+  background-color: rgb(37, 33, 43);
+  /* min-width: 400px; */
+  width: 650px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 16px;
@@ -557,7 +602,7 @@ select {
   overflow-wrap: break-word;
 }
 
-.ansDiv {
+#ansdiv {
   background-color: rgb(37, 33, 43);
   margin-top: 20px;
   min-width: 600px;
@@ -599,7 +644,12 @@ select {
 }
 
 .questionInnerContent {
-  width: 100%;
+  max-width: 100%;
+}
+
+.ansLine {
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .userDate {
@@ -622,8 +672,9 @@ select {
 }
 
 
-#ansdiv {
-  width: 100%;
+.ansdiv {
+  max-width: fit-content;
+  min-width: min-content;
   border:rgb(73, 62, 84) solid 1px;
   background-color: rgb(73, 62, 84);
 }

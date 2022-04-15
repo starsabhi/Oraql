@@ -26,7 +26,7 @@ block content
                         div(class='answerContent' id=`answerDisplay-${answer.id}`)
                             div(id=`answer-content-${answer.id}`)
                                 each line in answer.content.split('\n')
-                                    div= line
+                                    div(class='ansLine')= line
                             hr(class='divider' id='ansdiv')
                             div(class='userDate')
                                 div #{answer.User.username}
