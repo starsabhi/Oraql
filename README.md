@@ -1,4 +1,5 @@
 # Oraql
+![image](https://user-images.githubusercontent.com/95883222/163636079-46fe6865-8996-4a02-b1bb-ec2c782e26e8.png)
 
 Oraql is a website for users to ask and answer questions about supernatural phenomena. It is inspired by [Quora](https://www.quora.com/).
 
@@ -52,14 +53,14 @@ Logged out users can:
 
 - View Questions and Associated Answers
 - Search for Questions
-- View Questions by Topics/Tags (\*)
+- View Questions by Topics/Tags 
 
 Logged in users can:
 
 - Add/Edit/Delete Questions
 - Add/Edit/Delete Answers
 - Search for Questions
-- View Questions by Topics/Tags (\*)
+- View Questions by Topics/Tags 
 
 ### Home Page
 
@@ -228,3 +229,19 @@ submitBtn.addEventListener("click", async (submitEvent) => {
     }
 });
 ```
+
+Conclusion
+After 20 weeks as a Full Stack Software Engineering student at App Academy, this capstone project gave me the opportunity to apply and demonstrate what I have learned in:
+
+creating a database to seamlessly and coherently connect data
+setting up a backend server with user authentication, error handling, and API routes following RESTful conventions
+designing a frontend application with React components and connecting it to the backend
+making full use of the Redux state store to optimize load times
+This project also allowed me to explore:
+
+learning and utilizing socket.io to implement live chat / broadcasting
+integrating an external API (Google Calendar) and the handling of OAuth
+setting up Amazon Web Services S3 to handle image uploads
+
+
+
