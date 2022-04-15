@@ -15,7 +15,8 @@ router.get("/:id(\\d+)",csrfProtection, asyncHandler(async(req, res) => {
         include: [db.Tag, db.User]
     });
     const tag = await db.Tag.findByPk(tagId);
-    res.render('tag', { questions, tag, title: 'view questions by tags'})
+    const tags = await db.Tag.findAll();
+    res.render('tag', { questions, tag, tags, title: 'view questions by tags'})
 }))
 
 module.exports = router;

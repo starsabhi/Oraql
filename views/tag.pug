@@ -2,10 +2,15 @@ extends layout
 
 block content
   div(class="mainContentDiv")
+    div(class="questionDivMainPage")
+        div Other tags to search for:
+        each tag in tags
+            span(class="userTag tag" id=`${tag.tagName}`)
+                a(href=`/tags/${tag.id}`) ##{tag.tagName}
     p(class="pText") Questions for tag: "#{tag.tagName}"
     if questions.length
         each question in questions
-            div(class="questionDiv")
+            div(class="questionDivMainPage")
                 a(href=`/questions/${question.id}` class="questionText qContent") #{question.content}
                 div
                     span(class="askedBy") User:
