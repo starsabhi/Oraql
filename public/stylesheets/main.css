@@ -318,6 +318,9 @@ select {
   color: white;
   font-size: 1.5em;
   transition: 0.3s;
+  overflow-wrap: break-word;
+  width: 100%;
+
 }
 
 .questionTextStatic {
@@ -326,6 +329,10 @@ select {
   margin: 15px;
   color: white;
   font-size: 1.5em;
+  /* overflow-wrap: break-word; */
+  overflow-wrap: break-word;
+  width: 100%;
+
 }
 
 .questionMetaDiv {
@@ -339,7 +346,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .editDelete {
@@ -472,7 +479,7 @@ select {
 }
 
 .questionInnerContent {
-  width: 600px;
+  width: 100%;
 }
 
 .userDate {
@@ -524,7 +531,8 @@ gap: 30%
 .searchButton:hover,
 .navIcon:hover,
 .editAnsBtn:hover,
-.deleteAnsBtn:hover {
+.deleteAnsBtn:hover,
+.formButtonNoMargin:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -536,6 +544,43 @@ gap: 30%
 .searchButton:active,
 .navIcon:active,
 .editAnsBtn:active,
-.deleteAnsBtn:active {
+.deleteAnsBtn:active,
+.formButtonNoMargin:active {
   transform: scale(0.9);
+}
+
+.formBtnDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+
+}
+
+
+.formButtonNoMargin {
+  font: 14px "Varela Round", Helvetica, Arial, sans-serif;
+  background-color: rgb(255, 219, 128);
+  color: rgb(37, 33, 43);
+  border-radius: 50px;
+  border: none;
+  padding: 5px 15px;
+  font-size: 14pt;
+  transition: 0.3s;
+}
+
+#submitAnsBtn {
+  margin: none;
+  margin-left: none;
+}
+
+#cancelAnsBtn {
+  margin: none;
+  margin-left: none;
+  background-color: white;
+
+}
+
+#tagId {
+  margin: 10px 0px;
 }
