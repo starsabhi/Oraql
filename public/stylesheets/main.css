@@ -412,6 +412,7 @@ select {
   width: 700px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 60px;
   margin-bottom: 16px;
   border-radius: 10px;
   /* padding: 20px; */
