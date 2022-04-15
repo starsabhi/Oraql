@@ -398,7 +398,8 @@ select {
 }
 
 #demon {
-  background-color: rgb(163, 0, 0);
+  /* background-color: rgb(163, 0, 0); */
+  background-image: linear-gradient(to right, red , yellow);
 }
 
 #divination {
