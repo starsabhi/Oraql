@@ -719,9 +719,6 @@ select {
   gap: 30%
 }
 
-
-
-
 .formButton:hover,
 .accountAnchor:hover,
 .questionText:hover,
@@ -802,6 +799,7 @@ select {
   border-radius: 30px;
   padding: 2px 10px;
   text-transform: uppercase;
+  transition: .3s;
 }
 
 .tag > a {
@@ -809,6 +807,7 @@ select {
   font-size: 1em;
   font-weight: bold;
   text-decoration: none;
+  transition: 0.3s
 }
 
 
@@ -856,4 +855,35 @@ g > path {
 .qCreatedDate {
     padding-left: 10px;
 
+}
+
+/* .hoverTag {
+  transition: 0.3s;
+} */
+
+
+
+.formButton:hover,
+.accountAnchor:hover,
+.questionText:hover,
+.hoverAnimate:hover,
+.searchButton:hover,
+.navIcon:hover,
+.editAnsBtn:hover,
+.deleteAnsBtn:hover,
+.formButtonNoMargin:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.formButton:active,
+.accountAnchor:active,
+.questionText:active,
+.hoverAnimate:active,
+.searchButton:active,
+.navIcon:active,
+.editAnsBtn:active,
+.deleteAnsBtn:active,
+.formButtonNoMargin:active {
+  transform: scale(0.9);
 }
