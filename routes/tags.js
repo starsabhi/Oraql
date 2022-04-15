@@ -9,10 +9,11 @@ const db = require("../db/models");
 router.get("/:id(\\d+)",csrfProtection, asyncHandler(async(req, res) => {
     const tagId = parseInt(req.params.id, 10);
     const questions = await db.Question.findAll({
-        where: {
-            tagId
-        },
-        include: [db.Tag, db.User]
+      where: {
+        tagId,
+      },
+      include: [db.Tag, db.User],
+      order: [["createdAt", "DESC"]]
     });
     const tag = await db.Tag.findByPk(tagId);
     const tags = await db.Tag.findAll();
