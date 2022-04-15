@@ -399,56 +399,68 @@ select {
 }
 
 #alien {
-  background-color: rgb(0, 255, 98);
+  /* background-color: rgb(0, 255, 98); */
+  background-image: linear-gradient(to right, rgb(0, 255, 60) , rgb(0, 255, 251));
 }
 
 #angel {
-  background-color: rgb(0, 242, 255);
+  /* background-color: rgb(0, 242, 255); */
+  background-image: linear-gradient(to right, rgb(0, 255, 251), rgb(138, 153, 255));
 }
 
 #demon {
   /* background-color: rgb(163, 0, 0); */
-  background-image: linear-gradient(to right, red , yellow);
+  background-image: linear-gradient(to right, rgb(155, 0, 0) , rgb(255, 123, 0));
 }
 
 #divination {
-  background-color: rgb(209, 43, 255);
+  /* background-color: rgb(209, 43, 255); */
+  background-image: linear-gradient(to right, rgb(209, 43, 255), rgb(144, 113, 255));
 }
 
 #heaven {
-  background-color: rgb(255, 247, 104);
+  /* background-color: rgb(255, 247, 104); */
+  background-image: linear-gradient(to right, rgb(255, 98, 0) , rgb(255, 220, 80));
 }
 
 #karma {
-  background-color: rgb(255, 171, 245);
+  /* background-color: rgb(255, 171, 245); */
+  background-image: linear-gradient(to right, rgb(255, 171, 245) , rgb(255, 105, 165));
 }
 
 #magic {
-  background-color: rgb(255, 187, 0);
+  /* background-color: rgb(255, 187, 0); */
+  background-image: linear-gradient(to right, rgb(208, 153, 0) , rgb(255, 244, 128));
 }
 
 #prophecy {
-  background-color: rgb(0, 102, 255);
+  /* background-color: rgb(0, 102, 255); */
+  background-image: linear-gradient(to right, rgb(24, 116, 255) , rgb(128, 192, 255));
 }
 
 #reincarnation {
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
+  background-image: linear-gradient(to right, rgb(255, 255, 255) ,rgb(162, 162, 162));
 }
 
 #religion {
-  background-color: rgb(255, 111, 0);
+  /* background-color: rgb(255, 111, 0); */
+  background-image: linear-gradient(to right, rgb(255, 111, 0) ,rgb(255, 195, 149));
 }
 
 #spirit {
-  background-color: rgb(119, 131, 136);
+  /* background-color: rgb(119, 131, 136); */
+  background-image: linear-gradient(to right, rgb(116, 159, 177) ,rgb(225, 225, 225));
 }
 
 #underworld {
-  background-color: rgb(255, 60, 60);
+  /* background-color: rgb(255, 60, 60); */
+  background-image: linear-gradient(to right, rgb(255, 149, 0) ,rgb(255, 60, 60));
 }
 
 #witchcraft {
-  background-color: rgb(129, 0, 221);
+  /* background-color: rgb(129, 0, 221); */
+  background-image: linear-gradient(to right, rgb(129, 0, 221) ,rgb(191, 145, 255));
 }
 
 /* continue tag colors here */
