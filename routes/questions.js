@@ -99,6 +99,10 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
   // console.log(answers)
   // console.log(question)
   // console.log(question.Answers[0].User.username);
+  question.createdDate = question.createdAt.toDateString()
+  // console.log("QUESTION", question)
+  // console.log("QUESTION DATE", question.createdDate)
+
   res.render('question-detail', { title: question.content, question, answers })
 
 }))

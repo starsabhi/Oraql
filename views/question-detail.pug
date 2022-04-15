@@ -8,6 +8,7 @@ block content
                 div(class="qContent")
                     h2(class="questionTextStaticMain") #{question.content}
                     div(class="questionMetaDiv")
+                        span(class="qCreatedDate") #{question.createdDate}
                         div
                             span(class="askedBy") Asked by:
                             span(class="userTag") #{question.User.username}
