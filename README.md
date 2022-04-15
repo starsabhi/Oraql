@@ -230,18 +230,6 @@ submitBtn.addEventListener("click", async (submitEvent) => {
 });
 ```
 
-Conclusion
-After 20 weeks as a Full Stack Software Engineering student at App Academy, this capstone project gave me the opportunity to apply and demonstrate what I have learned in:
-
-creating a database to seamlessly and coherently connect data
-setting up a backend server with user authentication, error handling, and API routes following RESTful conventions
-designing a frontend application with React components and connecting it to the backend
-making full use of the Redux state store to optimize load times
-This project also allowed me to explore:
-
-learning and utilizing socket.io to implement live chat / broadcasting
-integrating an external API (Google Calendar) and the handling of OAuth
-setting up Amazon Web Services S3 to handle image uploads
 
 
 
