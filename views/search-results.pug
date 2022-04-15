@@ -5,7 +5,7 @@ block content
     p(class="pText") Search Results For: "#{search}"
     if questions.length
         each question in questions
-            div(class="questionDiv")
+            div(class="questionDivMainPage")
                 a(href=`/questions/${question.id}` class="questionText qContent") #{question.content}
                 div
                     span(class="askedBy") User:
