@@ -1,6 +1,4 @@
 # Oraql
-![image](https://user-images.githubusercontent.com/95883222/163636079-46fe6865-8996-4a02-b1bb-ec2c782e26e8.png)
-
 Oraql is a website for users to ask and answer questions about supernatural phenomena. It is inspired by [Quora](https://www.quora.com/).
 
 Try asking and answering questions at our live site: [Oraql](https://oraql.herokuapp.com/)
@@ -45,6 +43,12 @@ Try asking and answering questions at our live site: [Oraql](https://oraql.herok
 
 # Live
 
+# Database Schema
+
+![image](https://user-images.githubusercontent.com/95883222/163646085-82bc0651-9784-4b96-a7f8-e2a7f05b82b7.png)
+
+
+
 ### Features
 
 Oraql is a question-and-answer website for users to post/edit/delete questions and answers. Logged in sers can dynamically edit and delete answers without redirecting.
@@ -64,17 +68,31 @@ Logged in users can:
 
 ### Home Page
 
-![Home Page](./images/readme/welcomepage.png)
+![image](https://user-images.githubusercontent.com/95883222/163636079-46fe6865-8996-4a02-b1bb-ec2c782e26e8.png)
 
 ### User Log In Page
 
-### User Log Out Page
+![image](https://user-images.githubusercontent.com/95883222/163647096-86e80eea-8fc7-4412-9e9d-be6d771b9774.png)
+
+### User Sign Up Page
+
+![image](https://user-images.githubusercontent.com/95883222/163648546-c8dce78e-5b2c-4d98-8fc6-5af32423ad01.png)
 
 ### Add Question Page
 
+![image](https://user-images.githubusercontent.com/95883222/163648233-fc1358d7-800d-4681-9fe0-6305dd99abea.png)
+
 ### Question Detail Page
+![image](https://user-images.githubusercontent.com/95883222/163648383-7313edd3-7919-4825-8876-8fdd55133094.png)
 
 ### Search Results Page
+![image](https://user-images.githubusercontent.com/95883222/163648473-96310fdc-284a-4340-aafd-2fd84bd4be4a.png)
+
+### List of Question with Tags
+
+![image](https://user-images.githubusercontent.com/95883222/163648721-813593d0-e1fc-4092-a4ea-8199e404e4e7.png)
+
+
 
 # Future Features
 
