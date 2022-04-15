@@ -1051,15 +1051,6 @@ animation: strokeanim 3s ease-out forwards;
   grid-row: 3;
 }
 
-@keyframes fadein {
-  0% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-  }
-
-}
 
 @keyframes strokeanim {
 
@@ -1075,31 +1066,6 @@ animation: strokeanim 3s ease-out forwards;
   }
 
  }
-
- @keyframes bloodpumpcorner {
-  0% {
-    stroke-dashoffset:0;
-    stroke-dasharray: 200 10;
-  }
-  50% {
-    stroke-dashoffset:-40;
-    stroke-dasharray: 200 10;
-  }
-  100% {
-    stroke-dashoffset: 0;
-   stroke-dasharray: 200 10;
-  }
-}
-
- @keyframes bloodpump {
-  0% {
-    stroke-dashoffset:0;
-    stroke-dasharray: 20 2;
-  }
-  100% {
-    stroke-dashoffset:-22;
-   stroke-dasharray: 20 2;
-  }
 
 .askedUser {
   display: flex;
