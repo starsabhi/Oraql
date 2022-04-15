@@ -2,12 +2,11 @@ extends layout.pug
 include utils.pug
 block content
   div(class='form-div')
-    h2(class='formTitle') #{question.content}
+    h2(class='formTitle deleteQContent questionTextStatic') #{question.content}
     h3 Do you want to delete this question?
     hr(class='divider')
     form(action=`/questions/${question.id}/delete` method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
-      div
-        a(href=`/questions/${question.id}` class='formButton cancelButton') Cancel
-      div
-        button(type='submit' class='formButton') Delete
+      div(class="formBtnDiv deleteQBtnDiv")
+        a(href='/' class='formButtonNoMargin cancelButton' id="cancelAnsBtn") Cancel
+        button(type='submit' class='formButtonNoMargin' id='submitAnsBtn') Delete

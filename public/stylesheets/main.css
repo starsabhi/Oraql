@@ -6,6 +6,8 @@ body {
   background-image: url("/images/oraql-login-background.png");
   background-size: auto;
   background-repeat: repeat;
+  position: relative;
+  min-height: 100vh;
 }
 
 a {
@@ -41,7 +43,7 @@ nav {
 }
 
 .navSpacer {
-  height: 50px;
+  height: 80px;
 }
 
 h1 {
@@ -58,6 +60,23 @@ h1 {
 .form-div {
   background-color: rgb(73, 62, 84);
   width: 450px;
+  /* margin-left: auto;
+margin-right: auto;
+margin-top: 50px; */
+  margin: 50px auto 0;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(25, 20, 28);
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2))
+}
+
+.form-div-wide {
+  background-color: rgb(73, 62, 84);
+  width: 700px;
   /* margin-left: auto;
 margin-right: auto;
 margin-top: 50px; */
@@ -92,6 +111,14 @@ textarea {
   border: none;
   padding: 4px;
   resize: none;
+}
+
+.ansEditTextArea {
+  font-size: 12e;
+}
+
+.editLabel {
+  margin-top: -10px;
 }
 
 select {
@@ -237,6 +264,64 @@ select {
   z-index: 1;
 }
 
+.footerBar {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(25, 20, 28);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid rgb(25, 20, 28);
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2));
+  z-index: 1;
+}
+
+.footerContent {
+  display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
+}
+
+.footerSpacer {
+  height: 110px;
+}
+
+.footerIcons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.developerList {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.devDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.devLinks {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+
+#expressIcon {
+  filter: invert();
+  margin-top: 6px;
+}
+
 .navbarContent {
   width: 70%;
   display: flex;
@@ -274,7 +359,7 @@ select {
 }
 
 .pText {
-  margin-top: 50px;
+  margin-bottom: 30px;
   font-size: 1.5em;
   color: white;
   text-align: center;
@@ -336,10 +421,20 @@ select {
   margin: 15px;
   color: white;
   font-size: 1.5em;
-  /* overflow-wrap: break-word; */
   overflow-wrap: break-word;
-  width: 100%;
+  max-width: 100%;
+}
 
+.questionTextStaticMain {
+  text-decoration: none;
+  text-align: center;
+  margin: 15px;
+  color: white;
+  font-size: 1.5em;
+  overflow-wrap: break-word;
+  max-width: 100%;
+
+  /* width: 100%; */
 }
 
 .questionMetaDiv {
@@ -355,6 +450,7 @@ select {
   align-items: center;
   /* width: 100%; */
 }
+
 
 .editDelete {
   display: flex;
@@ -390,55 +486,68 @@ select {
 }
 
 #alien {
-  background-color: rgb(0, 255, 98);
+  /* background-color: rgb(0, 255, 98); */
+  background-image: linear-gradient(to right, rgb(0, 255, 60) , rgb(0, 255, 251));
 }
 
 #angel {
-  background-color: rgb(0, 242, 255);
+  /* background-color: rgb(0, 242, 255); */
+  background-image: linear-gradient(to right, rgb(0, 255, 251), rgb(138, 153, 255));
 }
 
 #demon {
-  background-color: rgb(163, 0, 0);
+  /* background-color: rgb(163, 0, 0); */
+  background-image: linear-gradient(to right, rgb(155, 0, 0) , rgb(255, 123, 0));
 }
 
 #divination {
-  background-color: rgb(209, 43, 255);
+  /* background-color: rgb(209, 43, 255); */
+  background-image: linear-gradient(to right, rgb(209, 43, 255), rgb(144, 113, 255));
 }
 
 #heaven {
-  background-color: rgb(255, 247, 104);
+  /* background-color: rgb(255, 247, 104); */
+  background-image: linear-gradient(to right, rgb(255, 98, 0) , rgb(255, 220, 80));
 }
 
 #karma {
-  background-color: rgb(255, 171, 245);
+  /* background-color: rgb(255, 171, 245); */
+  background-image: linear-gradient(to right, rgb(255, 171, 245) , rgb(255, 105, 165));
 }
 
 #magic {
-  background-color: rgb(255, 187, 0);
+  /* background-color: rgb(255, 187, 0); */
+  background-image: linear-gradient(to right, rgb(208, 153, 0) , rgb(255, 244, 128));
 }
 
 #prophecy {
-  background-color: rgb(0, 102, 255);
+  /* background-color: rgb(0, 102, 255); */
+  background-image: linear-gradient(to right, rgb(24, 116, 255) , rgb(128, 192, 255));
 }
 
 #reincarnation {
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
+  background-image: linear-gradient(to right, rgb(255, 255, 255) ,rgb(162, 162, 162));
 }
 
 #religion {
-  background-color: rgb(255, 111, 0);
+  /* background-color: rgb(255, 111, 0); */
+  background-image: linear-gradient(to right, rgb(255, 111, 0) ,rgb(255, 255, 255));
 }
 
 #spirit {
-  background-color: rgb(119, 131, 136);
+  /* background-color: rgb(119, 131, 136); */
+  background-image: linear-gradient(to right, rgb(116, 159, 177) ,rgb(225, 225, 225));
 }
 
 #underworld {
-  background-color: rgb(255, 60, 60);
+  /* background-color: rgb(255, 60, 60); */
+  background-image: linear-gradient(to right, rgb(255, 149, 0) ,rgb(255, 60, 60));
 }
 
 #witchcraft {
-  background-color: rgb(129, 0, 221);
+  /* background-color: rgb(129, 0, 221); */
+  background-image: linear-gradient(to right, rgb(129, 0, 221) ,rgb(191, 145, 255));
 }
 
 /* continue tag colors here */
@@ -476,7 +585,7 @@ select {
 
 .searchButton {
   /* background-color: none; */
-  background-color: white;
+  background-color: transparent;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -520,19 +629,20 @@ select {
 }
 
 .editAnsBtn, .deleteAnsBtn {
-border: none;
-background-color: transparent;
-color: white;
-transition: .3s;
-font-size: 12pt;
+  border: none;
+  background-color: transparent;
+  color: white;
+  transition: .3s;
+  font-size: 12pt;
 }
 
 
 .editdeleteAns {
-display: flex;
-justify-content: center;
-gap: 30%
+  display: flex;
+  justify-content: center;
+  gap: 30%
 }
+
 
 
 .formButton:hover,
@@ -568,6 +678,14 @@ gap: 30%
 
 }
 
+.deleteQBtnDiv {
+  width: 300px;
+}
+
+.deleteQContent {
+  margin-bottom: 14px;
+}
+
 
 .formButtonNoMargin {
   font: 14px "Varela Round", Helvetica, Arial, sans-serif;
@@ -578,6 +696,10 @@ gap: 30%
   padding: 5px 15px;
   font-size: 14pt;
   transition: 0.3s;
+}
+
+.edit-cancel {
+  background-color: white;
 }
 
 #submitAnsBtn {

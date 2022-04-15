@@ -6,7 +6,7 @@ block content
         div(class="questionDiv")
             div(class='questionInnerContent')
                 div(class="qContent")
-                    h2(class="questionTextStatic") #{question.content}
+                    h2(class="questionTextStaticMain") #{question.content}
                     div(class="questionMetaDiv")
                         div
                             span(class="askedBy") Asked by:
@@ -34,10 +34,11 @@ block content
                             if answer.User.id === locals.user.id
                                 form(class='hidden' id=`edit-form-${answer.id}`)
                                     div(class='errorList formError' id=`edit-errors-${answer.id}`)
-                                    label Edit your answer:
-                                    textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="30" rows="10")
-                                    button(class="edit-cancel" id=`edit-cancel-${answer.id}`) Cancel
-                                    button(class=`q-${question.id} edit-submit` id=`edit-submit-${answer.id}`) Submit
+                                    label(class='editLabel') Edit your answer:
+                                    textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="55" rows="10" class='ansEditTextArea')
+                                    div(class="formBtnDiv")
+                                        button(class="edit-cancel formButtonNoMargin cancelButton" id=`edit-cancel-${answer.id}`) Cancel
+                                        button(class=`q-${question.id} edit-submit formButtonNoMargin` id=`edit-submit-${answer.id}`) Submit
                                 div(class='editdeleteAns')
                                     button(type='submit' class='editAnsBtn' id=`edit-${answer.id}`) Edit
                                     button(type='submit' class=`q-${question.id} deleteAnsBtn`  id=`delete-${answer.id}`) Delete

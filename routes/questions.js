@@ -39,7 +39,7 @@ const questionValidators = [
     .isLength({ max: 140 })
     .withMessage("Question cannot be more than 140 characters long")
     .custom((value) => !/^ *$/.test(value))
-    .withMessage("Question cannot be empty"),
+    .withMessage("Question must contain characters"),
   check("tagId")
     .exists({ checkFalsy: true })
     .withMessage("Please select a tag for your question"),
@@ -184,7 +184,7 @@ const answerValidators = [
     .exists({ checkFalsy: true })
     .withMessage("Answer cannot be empty")
     .custom((value) => !/^ *$/.test(value))
-    .withMessage("Answer cannot be empty"),
+    .withMessage("Answer must contain characters"),
 ];
 
 router.post('/:id(\\d+)/answers/new', requireAuth, answerValidators, csrfProtection, asyncHandler(async(req, res) => {
