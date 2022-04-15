@@ -1,12 +1,11 @@
 body {
   /* padding: 400px; */
-  background-color: rgb(37, 33, 43);
   font: 14px "Varela Round", Helvetica, Arial, sans-serif;
   color: white;
+  background-color: rgb(37, 33, 43);
   background-image: url("/images/oraql-login-background.png");
-  background-size: contain;
+  background-size: auto;
   background-repeat: repeat;
-  height: 100%;
 }
 
 a {
