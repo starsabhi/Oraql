@@ -585,7 +585,7 @@ select {
 
 .searchButton {
   /* background-color: none; */
-  background-color: white;
+  background-color: transparent;
   border: none;
   border-radius: 5px;
   cursor: pointer;
