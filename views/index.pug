@@ -7,8 +7,9 @@ block content
       div(class="questionDivMainPage")
         a(href=`/questions/${question.id}` class="questionText qContent") #{question.content}
         div(class="userTagDiv")
-          span(class="askedBy") User:
-          span(class="userTag") #{question.User.username}
+          div(class="askedUser")
+            span(class="askedBy") User:
+            span(class="userTag") #{question.User.username}
           div(class="hoverAnimate")
             span(class="userTag tag" id=`${question.Tag.tagName}`)
               a(href=`/tags/${question.Tag.id}`) ##{question.Tag.tagName}
