@@ -4,10 +4,10 @@ block content
   div(class="mainContentDiv")
     p(class="pText") Ask about supernatural encounters and phenomena, or answer a question with your expertise and experience!
     each question in questions
-      div(class="questionDiv")
+      div(class="questionDivMainPage")
         a(href=`/questions/${question.id}` class="questionText qContent") #{question.content}
         div
           span(class="askedBy") User:
           span(class="userTag") #{question.User.username}
-          span(class="userTag tag" id=`${question.Tag.tagName}`) 
+          span(class="userTag tag" id=`${question.Tag.tagName}`)
             a(href=`/tags/${question.Tag.id}`) ##{question.Tag.tagName}
