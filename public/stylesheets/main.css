@@ -593,12 +593,12 @@ gap: 30%
 }
 
 .logoSvg {
-  animation: logoBlur 25s ease-in-out alternate infinite;
+  animation: logoBlur 15s ease-in-out alternate infinite;
 
 }
 
 g > path {
-  animation: logoColor 25s ease-in-out alternate infinite;
+  animation: logoColor 15s ease-in-out alternate infinite;
 }
 
 @keyframes logoBlur {
@@ -611,6 +611,9 @@ g > path {
   50% {
     filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 1));
   }
+  75% {
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 1));
+  }
   100% {
     filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 1));
   }
@@ -622,6 +625,9 @@ g > path {
    }
    50% {
      fill: white;
+   }
+   75% {
+    fill: rgba(73, 62, 84);
    }
    100% {
      fill: rgba(73, 62, 84);
