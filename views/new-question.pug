@@ -10,12 +10,10 @@ block content
       label(for="content") I want to know...
       textarea(name="content" cols="30" rows="10" maxlength='140' ) #{data.content}
       div#less (Less than 140 characters)
-      label(for="tagId") Tag
-      select(name="tagId")
+      select(name="tagId" id="tagId")
         option(disabled selected) Select a tag
         each tag in tags
             option(value=tag.id selected=(tag.id == data.tagId )) #{tag.tagName}
-      div
-        a(href='/' class='formButton cancelButton') Cancel
-      div
-        button(type='submit' class='formButton') Submit
+      div(class="formBtnDiv")
+        a(href='/' class='formButtonNoMargin cancelButton' id="cancelAnsBtn") Cancel
+        button(type='submit' class='formButtonNoMargin' id='submitAnsBtn') Submit

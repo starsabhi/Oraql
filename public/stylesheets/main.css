@@ -346,7 +346,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .editDelete {
@@ -479,7 +479,7 @@ select {
 }
 
 .questionInnerContent {
-  width: 600px;
+  width: 100%;
 }
 
 .userDate {
@@ -579,4 +579,8 @@ gap: 30%
   margin-left: none;
   background-color: white;
 
+}
+
+#tagId {
+  margin: 10px 0px;
 }
