@@ -2,6 +2,7 @@ extends layout
 
 block content
   div(class="mainContentDiv")
+    include fancy-frame.pug
     p(class="pText") Ask about supernatural encounters and phenomena, or answer a question with your expertise and experience!
     each question in questions
       div(class="questionDivMainPage")
