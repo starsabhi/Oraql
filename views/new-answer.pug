@@ -1,14 +1,14 @@
 extends layout.pug
 include utils.pug
 block content
-  div(class='form-div')
+  div(class='form-div-wide')
     h2(class='questionTextStatic') #{question.content}
     hr(class='divider')
     +validationErrorSummary(errors)
     form(action=`/questions/${question.id}/answers/new` method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
       label(for="content") My answer:
-      textarea(name="content" cols="30" rows="10") #{data.content}
+      textarea(name="content" cols="55" rows="10") #{data.content}
       div(class="formBtnDiv")
         a(href=`/questions/${question.id}/` class='formButtonNoMargin cancelButton' id='cancelAnsBtn') Cancel
         button(type='submit' class='formButtonNoMargin' id='submitAnsBtn') Submit

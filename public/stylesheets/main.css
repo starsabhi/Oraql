@@ -6,6 +6,8 @@ body {
   background-image: url("/images/oraql-login-background.png");
   background-size: auto;
   background-repeat: repeat;
+  position: relative;
+  min-height: 100vh;
 }
 
 a {
@@ -58,6 +60,23 @@ h1 {
 .form-div {
   background-color: rgb(73, 62, 84);
   width: 450px;
+  /* margin-left: auto;
+margin-right: auto;
+margin-top: 50px; */
+  margin: 50px auto 0;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(25, 20, 28);
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2))
+}
+
+.form-div-wide {
+  background-color: rgb(73, 62, 84);
+  width: 700px;
   /* margin-left: auto;
 margin-right: auto;
 margin-top: 50px; */
@@ -245,6 +264,55 @@ select {
   z-index: 1;
 }
 
+.footerBar {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(25, 20, 28);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid rgb(25, 20, 28);
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2));
+  z-index: 1;
+}
+
+.footerSpacer {
+  height: 70px;
+}
+
+.footerIcons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.developerList {
+  display: flex;
+  gap: 10px;
+}
+
+.devDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.devLinks {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+
+#expressIcon {
+  filter: invert();
+  margin-top: 6px;
+}
+
 .navbarContent {
   width: 70%;
   display: flex;
@@ -344,10 +412,8 @@ select {
   margin: 15px;
   color: white;
   font-size: 1.5em;
-  /* overflow-wrap: break-word; */
   overflow-wrap: break-word;
   width: 100%;
-
 }
 
 .questionMetaDiv {
@@ -445,7 +511,7 @@ select {
 
 #religion {
   /* background-color: rgb(255, 111, 0); */
-  background-image: linear-gradient(to right, rgb(255, 111, 0) ,rgb(255, 195, 149));
+  background-image: linear-gradient(to right, rgb(255, 111, 0) ,rgb(255, 255, 255));
 }
 
 #spirit {
