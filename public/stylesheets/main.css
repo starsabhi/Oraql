@@ -176,6 +176,12 @@ select {
   height: 24px;
 }
 
+.navLineGrey {
+  border: rgb(107, 107, 107) 1px solid;
+  background-color: rgb(107, 107, 107);
+  height: 24px;
+}
+
 #signup {
   margin-left: 0px;
   padding-left: 3px;
@@ -334,6 +340,7 @@ select {
 
 .smallFont {
   font-size: 8pt;
+  color: rgb(107, 107, 107);
 }
 
 
