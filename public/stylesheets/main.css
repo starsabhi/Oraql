@@ -903,10 +903,6 @@ g > path {
 
 }
 
-/* .hoverTag {
-  transition: 0.3s;
-} */
-
 .hoverAnimate {
   transition: .3s;
 }
@@ -938,4 +934,163 @@ g > path {
 .tag:active
  {
   transform: scale(0.9);
+}
+
+.frame-container {
+  display: grid;
+  grid-template-columns: 30px auto 30px;
+  grid-template-rows: 30px auto 30px;
+  height: auto;
+  width: auto;
+ min-height: 200px;
+ min-width: 200px;
+ border-radius: 10px;
+ margin: 5px;
+ padding: 10px;
+ z-index: -2;
+}
+
+.frame >
+path,
+line,
+polyline {
+  stroke: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+/* animations for corners */
+.corner > path,
+.corner > line,
+.corner > polyline
+ {
+
+animation: strokeanim 3s ease-out forwards;
+}
+
+/* animations for sides */
+.travel > path,
+.travel > line,
+.travel > polyline
+ {
+animation: strokeanim 3s ease-out forwards;
+}
+
+#photo-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+  z-index: -1;
+  margin: 0px;
+  width: 100%;
+  height: auto;
+}
+
+#top-left-corner {
+  grid-area: a;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#top-travel {
+  grid-area: b;
+  width: 100%;
+  height: 100%;
+  grid-column: 2;
+  grid-row: 1;
+
+}
+
+#top-right-corner {
+  grid-area: c;
+  grid-column: 3;
+  grid-row: 1;
+}
+
+#left-travel {
+  grid-area: d;
+  width: 100%;
+  height: 100%;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#right-travel {
+  grid-area: e;
+  width: 100%;
+  height: 100%;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+#bottom-left-corner {
+  grid-area: f;
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#bottom-travel {
+  grid-area: g;
+  width: 100%;
+  height: 100%;
+  grid-column: 2;
+  grid-row: 3;
+}
+
+#bottom-right-corner {
+  grid-area: h;
+  grid-column: 3;
+  grid-row: 3;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+
+}
+
+@keyframes strokeanim {
+
+  0% {
+    stroke-dashoffset: -50;
+  stroke-dasharray: 200, 50;
+    stroke-width: 2;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  stroke-dasharray: 200, 50;
+    stroke-width: 2;
+  }
+
+ }
+
+ @keyframes bloodpumpcorner {
+  0% {
+    stroke-dashoffset:0;
+    stroke-dasharray: 200 10;
+  }
+  50% {
+    stroke-dashoffset:-40;
+    stroke-dasharray: 200 10;
+  }
+  100% {
+    stroke-dashoffset: 0;
+   stroke-dasharray: 200 10;
+  }
+}
+
+ @keyframes bloodpump {
+  0% {
+    stroke-dashoffset:0;
+    stroke-dasharray: 20 2;
+  }
+  100% {
+    stroke-dashoffset:-22;
+   stroke-dasharray: 20 2;
+  }
 }
