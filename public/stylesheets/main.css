@@ -447,6 +447,15 @@ select {
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2))
 }
 
+.questionDivTags {
+  text-align: center;
+  width: 650px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 .ansDiv {
   background-color: rgb(37, 33, 43);
