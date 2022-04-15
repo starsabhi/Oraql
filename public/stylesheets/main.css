@@ -94,6 +94,14 @@ textarea {
   resize: none;
 }
 
+.ansEditTextArea {
+  font-size: 12pt;
+}
+
+.editLabel {
+  margin-top: -10px;
+}
+
 select {
   font: 20px "Varela Round", Helvetica, Arial, sans-serif;
   width: 50%;
@@ -356,6 +364,7 @@ select {
   /* width: 100%; */
 }
 
+
 .editDelete {
   display: flex;
   width: 170px;
@@ -521,19 +530,20 @@ select {
 }
 
 .editAnsBtn, .deleteAnsBtn {
-border: none;
-background-color: transparent;
-color: white;
-transition: .3s;
-font-size: 12pt;
+  border: none;
+  background-color: transparent;
+  color: white;
+  transition: .3s;
+  font-size: 12pt;
 }
 
 
 .editdeleteAns {
-display: flex;
-justify-content: center;
-gap: 30%
+  display: flex;
+  justify-content: center;
+  gap: 30%
 }
+
 
 
 .formButton:hover,
@@ -569,6 +579,14 @@ gap: 30%
 
 }
 
+.deleteQBtnDiv {
+  width: 300px;
+}
+
+.deleteQContent {
+  margin-bottom: 14px;
+}
+
 
 .formButtonNoMargin {
   font: 14px "Varela Round", Helvetica, Arial, sans-serif;
@@ -579,6 +597,10 @@ gap: 30%
   padding: 5px 15px;
   font-size: 14pt;
   transition: 0.3s;
+}
+
+.edit-cancel {
+  background-color: white;
 }
 
 #submitAnsBtn {
