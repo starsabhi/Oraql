@@ -15,5 +15,5 @@ block content
         each tag in tags
             option(value=tag.id selected=(tag.id == question.tagId )) #{tag.tagName}
       div(class="formBtnDiv")
-        a(href='/' class='formButtonNoMargin cancelButton' id="cancelAnsBtn") Cancel
+        a(href=`/questions/${question.id}` class='formButtonNoMargin cancelButton' id="cancelAnsBtn") Cancel
         button(type='submit' class='formButtonNoMargin' id='submitAnsBtn') Submit
