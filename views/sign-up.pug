@@ -6,13 +6,13 @@ block content
         h2(class='formTitle') Create Account
         hr(class='divider')
         +validationErrorSummary(errors)
-        form(action='/users/sign-up' method='post')
+        form(action='/users/sign-up' method='post' class="loginForm")
             input(type='hidden' name='_csrf' value=csrfToken)
             +field('Username', 'username', user.username)
             +field('Email', 'email', user.email)
             +field('Password', 'password', user.password, 'password')
             +field('Confirm Password', 'confirmPassword', '', 'password')
-            div
-                button(type='submit' class='formButton') Sign Up
+            div(class="formLogin")
+                button(type='submit' class='formButton' id="submitSign") Sign Up
             div(class='accountAnchor')
-                p: a(href='/users/log-in' class='accountAnchortext') Already have an account?
+                p: a(href='/users/log-in' class='accountAnchortext' id="haveAcc") Already have an account?
