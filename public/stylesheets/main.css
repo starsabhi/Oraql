@@ -90,16 +90,17 @@ margin-top: 50px; */
 
 .form-div-wide {
   background-color: rgb(73, 62, 84);
-  width: 700px;
-  /* margin-left: auto;
+  width: 80%;
+  margin-left: auto;
 margin-right: auto;
-margin-top: 50px; */
-  margin: 50px auto 0;
+/* margin-top: 50px;  */
+  /* margin: 50px auto 0; */
   border-radius: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
   border: 1px solid rgb(25, 20, 28);
   box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2))
@@ -820,6 +821,7 @@ select {
   justify-content: space-between;
   width: 100%;
   margin-top: 10px;
+  flex-wrap: wrap;
 
 }
 
@@ -841,6 +843,7 @@ select {
   padding: 5px 15px;
   font-size: 14pt;
   transition: 0.3s;
+  margin: 5px 0;
 }
 
 .edit-cancel {
@@ -1118,4 +1121,9 @@ footer {
 mark {
   background-color: rgb(165, 234, 252);
   border-radius: 3px;
+}
+
+
+.askQTextarea, .askQForm {
+  width: 100%;
 }

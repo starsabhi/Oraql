@@ -5,10 +5,10 @@ block content
     h2(class='formTitle') Ask a Question!
     hr(class='divider')
     +validationErrorSummary(errors)
-    form(action='/questions/new' method='post')
+    form(action='/questions/new' method='post' class="askQForm")
       input(type='hidden' name='_csrf' value=csrfToken)
       label(for="content") I want to know...
-      textarea(name="content" cols="55" rows="5" maxlength='140' ) #{data.content}
+      textarea(name="content" cols="55" rows="5" maxlength='140' class="askQTextarea") #{data.content}
       div#less (Less than 140 characters)
       select(name="tagId" id="tagId")
         option(disabled selected) Select a tag
