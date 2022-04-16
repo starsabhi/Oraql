@@ -132,6 +132,7 @@ textarea {
 
 .ansEditTextArea {
   font-size: 12e;
+  
 }
 
 .editLabel {
@@ -1105,6 +1106,7 @@ animation: strokeanim 3s ease-out forwards;
   display: flex;
   flex-wrap: wrap;
   margin: 7px 0;
+  justify-content: center;
 }
 
 #tagSpans {
