@@ -11,11 +11,20 @@ questions.forEach(question => {
     console.log(words);
     let newWords = [];
     for (let word of words) {
-        word = word.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
+        // word = word.replace(/[^\w\s]|_$/g, "").replace(/\s+/g, " ");
         let found = false;
         for (let tag of tags) {
-            if (word.toLowerCase().startsWith(tag)) {
-                newWords.push(`<mark>${word}</mark>`);
+            if (word.toLowerCase().includes(tag)) {
+                if (!["?", "!", ".", "," ].includes(word[word.length - 1])) {
+                  console.log(word);
+                  newWords.push(`<mark>${word}</mark>`);
+                } else {
+                  newWords.push(
+                    `<mark>${word.slice(0, word.length - 1)}</mark>${
+                      word[word.length - 1]
+                    }`
+                  );
+                }
                 found = true
                 break
             } 
