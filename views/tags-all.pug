@@ -2,7 +2,8 @@ extends layout
 
 block content
   div(class="mainContentDiv")
-    div(class="questionDivTagPage") View Questions by Tags:
+    div(class="questionDivTagPage")
+        div(id="tagSpans") View Questions by Tags:
         div(class='questionDivTags')
             each tag in tags
                 span(class="userTag tag searchTag" id=`${tag.tagName}`)

@@ -2,6 +2,12 @@ html, body {
   min-height: 100%;
 }
 
+/* html {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
 body {
   font: 14px "Varela Round", Helvetica, Arial, sans-serif;
   color: white;
@@ -12,6 +18,9 @@ body {
   position: relative;
   min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a {
@@ -277,21 +286,21 @@ select {
   z-index: 1;
 }
 
-.footerBar {
-  position: absolute;
+/* .footerBar {
+  /* position: absolute;
   bottom: 0px;
   left: 0;
-  right: 0;
-  max-width: 100%;
+  right: 0; */
+  /* max-width: 100%;
   height: fit-content;
   background-color: rgb(25, 20, 28);
   padding-top: 10px;
   border-top: 1px solid rgb(25, 20, 28);
   box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2));
-  z-index: 1;
+  z-index: 1; */
   /* min-width: 700px; */
-}
+/* } */
 
 .footerContent {
   margin-left: auto;
@@ -304,10 +313,10 @@ select {
   width: 100%;
 }
 
-.footerSpacer {
+/* .footerSpacer {
   height: 110px;
   width: 100%
-}
+} */
 
 .footerIcons {
   display: flex;
@@ -406,9 +415,7 @@ select {
 
 .mainContentDiv {
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 60px;
+  margin: 60px auto;
 }
 
 .questionDiv {
@@ -456,7 +463,7 @@ select {
 .questionDivTagPage {
   /* background-color: rgb(73, 62, 84); */
   /* min-width: 400px; */
-  width: 700px;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   /* border-radius: 10px; */
@@ -469,11 +476,12 @@ select {
   /* box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3); */
   /* filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2)); */
   padding: 10px 0px;
+  flex-wrap: wrap;
 }
 
 .questionDivTags {
   text-align: center;
-  width: 650px;
+  width: 95%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1091,4 +1099,18 @@ animation: strokeanim 3s ease-out forwards;
   display: flex;
   flex-wrap: wrap;
   margin: 7px 0;
+}
+
+#tagSpans {
+  padding-bottom: 10px;
+}
+
+footer {
+  margin-top: 20px;
+  width: 100%;
+  background-color: rgb(25, 20, 28);
+  padding-top: 10px;
+  border-top: 1px solid rgb(25, 20, 28);
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2));
 }
