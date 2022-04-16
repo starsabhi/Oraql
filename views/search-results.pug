@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  script(src="/javascripts/search-results.js" type="module")
   div(class="mainContentDiv")
     p(class="pText") Search Results For: "#{search}"
     if questions.length

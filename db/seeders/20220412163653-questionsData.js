@@ -38,7 +38,7 @@ module.exports = {
         {content: 'What are the types of magic?', userId: 6, tagId: 7, createdAt: '2022-02-04', updatedAt: '2021-02-04'},
         {content: 'What predictions actually came true?', userId: 9, tagId: 8, createdAt: '2022-04-12', updatedAt: '2022-04-12'},
         {content: 'Have aliens ever visited earth?', userId: 8, tagId: 5, createdAt: '2019-10-07', updatedAt: '2019-10-07'},
-        {content: 'Do you believe in "aliens?" Why or why not?', userId: 10, tagId: 1, createdAt: '2020-10-07', updatedAt: '2020-10-07'},
+        {content: 'Do you believe in "aliens"? Why or why not?', userId: 10, tagId: 1, createdAt: '2020-10-07', updatedAt: '2020-10-07'},
         {content: 'Do aliens really exist and if so can we prove it?', userId: 12, tagId: 1, createdAt: '2020-10-07', updatedAt: '2020-10-07'},
         {content: 'Is it possible that humans become demons?', userId: 13, tagId: 3, createdAt: '2020-02-07', updatedAt: '2020-02-07'},
         {content: 'What is heaven like?', userId: 14, tagId: 5, createdAt: '2020-02-07', updatedAt: '2020-02-07'},
