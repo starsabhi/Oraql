@@ -14,7 +14,7 @@ questions.forEach(question => {
         // word = word.replace(/[^\w\s]|_$/g, "").replace(/\s+/g, " ");
         let found = false;
         for (let tag of tags) {
-            if (word.toLowerCase().includes(tag)) {
+            if (word.toLowerCase().includes(tag.toLowerCase())) {
                 if (!["?", "!", ".", "," ].includes(word[word.length - 1])) {
                   // console.log(word);
                   newWords.push(`<mark>${word}</mark>`);
@@ -32,5 +32,5 @@ questions.forEach(question => {
         if (!found) newWords.push(word)
     }
     question.innerHTML = newWords.join(" ");
-    console.log(question.innerHTML)
+    // console.log(question.innerHTML)
 })
