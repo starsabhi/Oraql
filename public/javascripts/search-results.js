@@ -8,7 +8,7 @@ const questions = document.querySelectorAll('.qContent')
 
 questions.forEach(question => {
     const words = question.textContent.trim().split(/\s/g);
-    console.log(words);
+    // console.log(words);
     let newWords = [];
     for (let word of words) {
         // word = word.replace(/[^\w\s]|_$/g, "").replace(/\s+/g, " ");
@@ -16,7 +16,7 @@ questions.forEach(question => {
         for (let tag of tags) {
             if (word.toLowerCase().includes(tag)) {
                 if (!["?", "!", ".", "," ].includes(word[word.length - 1])) {
-                  console.log(word);
+                  // console.log(word);
                   newWords.push(`<mark>${word}</mark>`);
                 } else {
                   newWords.push(
@@ -27,7 +27,7 @@ questions.forEach(question => {
                 }
                 found = true
                 break
-            } 
+            }
         }
         if (!found) newWords.push(word)
     }
