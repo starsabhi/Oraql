@@ -290,7 +290,7 @@ select {
   box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2));
   z-index: 1;
-  min-width: 700px;
+  /* min-width: 700px; */
 }
 
 .footerContent {
@@ -315,6 +315,8 @@ select {
   align-items: center;
   justify-content: center;
   /* margin-top: 10px; */
+  flex-wrap: wrap;
+  padding-top: 2px;
 }
 
 .developerList {
@@ -322,7 +324,10 @@ select {
   gap: 10px;
   justify-content: center;
   align-items: center;
-  margin-bottom: -10px;
+  /* margin-bottom: -10px; */
+  flex-wrap: wrap;
+  padding-bottom: 2px;
+
 }
 
 .devDiv {
@@ -409,7 +414,7 @@ select {
 .questionDiv {
   background-color: rgb(73, 62, 84);
   /* min-width: 400px; */
-  width: 700px;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
@@ -479,7 +484,7 @@ select {
 .ansDiv {
   background-color: rgb(37, 33, 43);
   /* min-width: 400px; */
-  width: 650px;
+  /* width: 650px; */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 16px;
@@ -546,7 +551,7 @@ select {
   color: white;
   font-size: 1.5em;
   overflow-wrap: break-word;
-  width: 620px;
+  /* width: 620px; */
 }
 
 .questionMetaDiv {
@@ -554,6 +559,7 @@ select {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .editDeleteAnswer {
@@ -561,7 +567,13 @@ select {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  padding: 0px 0 0 5px;
   /* width: 100%; */
+  flex-wrap: wrap;
+  border: solid .5px rgb(37, 33, 43, 0.2);
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+
 }
 
 
@@ -569,6 +581,7 @@ select {
   display: flex;
   width: 170px;
   justify-content: space-around;
+  margin: 5px 0;
 }
 
 #editBtn {
@@ -583,6 +596,7 @@ select {
   /* margin-left: auto;
   margin-right: auto; */
   /* float: right; */
+  /* margin: 2px 5px 0; */
 }
 
 
@@ -666,7 +680,8 @@ select {
 #ansdiv {
   background-color: rgb(37, 33, 43);
   margin-top: 20px;
-  min-width: 600px;
+  /* min-width: 600px; */
+  width: 95%;
 }
 
 .searchBar {
@@ -718,7 +733,11 @@ select {
   display: flex;
   justify-content: space-between;
   padding: 3px 0px;
+  flex-wrap: wrap;
+}
 
+.userAns {
+  padding: 3px;
 }
 
 .answerContent {
@@ -759,7 +778,8 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
+  width: inherit;
+  flex-wrap: wrap;
 }
 
 .formButton:hover,
@@ -1069,4 +1089,6 @@ animation: strokeanim 3s ease-out forwards;
 
 .askedUser {
   display: flex;
+  flex-wrap: wrap;
+  margin: 7px 0;
 }

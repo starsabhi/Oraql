@@ -9,9 +9,10 @@ block content
                     h2(class="questionTextStaticMain") #{question.content}
                     div(class="questionMetaDiv")
                         span(class="qCreatedDate") #{question.createdDate}
-                        div
-                            span(class="askedBy") Asked by:
-                            span(class="userTag") #{question.User.username}
+                        div(class="userTagDiv")
+                            div(class="askedUser")
+                                span(class="askedBy") Asked by:
+                                span(class="userTag") #{question.User.username}
                         span(class="userTag tag" id=`${question.Tag.tagName}`)
                             a(href=`/tags/${question.Tag.id}`) ##{question.Tag.tagName}
                 div(class='editDeleteAnswer')
@@ -30,8 +31,8 @@ block content
                                     div(class='ansLine')= line
                             hr(class='divider' id='ansdiv')
                             div(class='userDate')
-                                div #{answer.User.username}
-                                div #{answer.date}
+                                div(class="userAns") #{answer.User.username}
+                                div(class="userAns") #{answer.date}
                         if locals.authenticated
                             if answer.User.id === locals.user.id
                                 form(class='hidden' id=`edit-form-${answer.id}`)
