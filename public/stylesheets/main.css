@@ -73,7 +73,7 @@ h1 {
 
 .form-div {
   background-color: rgb(73, 62, 84);
-  width: 450px;
+  width: 50%;
   /* margin-left: auto;
 margin-right: auto;
 margin-top: 50px; */
@@ -1126,4 +1126,17 @@ mark {
 
 .askQTextarea, .askQForm {
   width: 100%;
+}
+
+.loginForm {
+  width: 90%
+}
+
+.formLogin {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitLogin {
+  white-space: nowrap;
 }

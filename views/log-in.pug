@@ -6,11 +6,11 @@ block content
     h2(class='formTitle') Log In
     hr(class='divider')
     +validationErrorSummary(errors)
-    form(action='/users/log-in' method='post')
+    form(action='/users/log-in' method='post' class="loginForm")
       input(type='hidden' name='_csrf' value=csrfToken)
       +field('Email', 'email', email)
       +field('Password', 'password', password, 'password')
-      div
-        button(type='submit' class='formButton') Log In
+      div(class="formLogin")
+        button(type='submit' class='formButton' id="submitLogin") Log In
       div(class='accountAnchor')
         p: a(href='/users/sign-up' class='accountAnchortext') Don't have an account?
