@@ -239,6 +239,7 @@ select {
 
 .formTitle {
   font-size: 20pt;
+  text-align: center;
 }
 
 .askbtn {
@@ -1140,7 +1141,7 @@ mark {
   margin: 15px 0;
 }
 
-#submitLogin {
+#submitLogin, #submitSign {
   /* white-space: nowrap; */
   margin: 0;
 }
@@ -1149,7 +1150,7 @@ mark {
   width: 100%;
 }
 
-#noAccount {
+#noAccount, #haveAcc {
   white-space: pre-line;
 
 }
