@@ -3,12 +3,15 @@ include utils.pug
 block content
   div(class='questionDiv' id="answerBigDiv")
     h2(class='questionTextStatic') #{question.content}
+  div(class='extraNavSpacer')
+  div(class='form-div-wide')
+    h2(class='formTitle') #{question.content}
     hr(class='divider')
     +validationErrorSummary(errors)
     form(action=`/questions/${question.id}/answers/new` method='post' class="askQForm")
       input(type='hidden' name='_csrf' value=csrfToken)
       label(for="content") My answer:
-      textarea(name="content" cols="55" rows="10" class="askQTextarea") #{data.content}
+      textarea(name="content" cols="55" rows="10" class="askQTextarea" autofocus) #{data.content}
       div(class="formBtnDiv")
         a(href=`/questions/${question.id}/` class='formButtonNoMargin cancelButton' id='cancelAnsBtn') Cancel
         button(type='submit' class='formButtonNoMargin' id='submitAnsBtn') Submit
