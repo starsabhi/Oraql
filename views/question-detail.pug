@@ -37,7 +37,7 @@ block content
                             if answer.User.id === locals.user.id
                                 form(class='hidden' id=`edit-form-${answer.id}`)
                                     div(class='errorList formError' id=`edit-errors-${answer.id}`)
-                                    label(class='editLabel') Edit your answer:
+                                    label(class='editLabel' id=`edit-label-delete-${answer.id}`) Edit your answer:
                                     textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="55" rows="10" class='ansEditTextArea')
                                     div(class="formBtnDiv")
                                         button(class="edit-cancel formButtonNoMargin cancelButton" id=`edit-cancel-${answer.id}`) Cancel

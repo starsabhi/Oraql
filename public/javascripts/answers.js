@@ -99,33 +99,64 @@ const deleteBtns = document.querySelectorAll(".deleteAnsBtn");
 for (let i = 0; i < deleteBtns.length; i++) {
     const answerId = parseInt(deleteBtns[i].id.split('-')[1], 10);
 
-    const [ form, editAnswerButton, deleteAnswerButton ] = [
+    const [ originalAns, content, form, answerContent, editAnswerButton, deleteAnswerButton, textArea, editLabelforDelete ] = [
+        document.getElementById(`answer-content-${answerId}`),
+        document.getElementById(`${answerId}-edit-content`),
         document.querySelector(`#edit-form-${answerId}`),
+        document.querySelector(`#answerDisplay-${answerId}`),
         document.querySelector(`#edit-${answerId}`),
-        document.querySelector(`#delete-${answerId}`)
+        document.querySelector(`#delete-${answerId}`),
+        document.getElementById(`${answerId}-edit-content`),
+        document.getElementById(`edit-label-delete-${answerId}`)
     ]
 
-    deleteBtns[i].addEventListener('click', async (e) => {
-        const questionId = parseInt(
-            e.target.classList[0].split('-')[1],
-            10
-        );
 
-        const res = await fetch(`/questions/${questionId}/answers/${answerId}`, {
-            method: "DELETE"
+
+    deleteBtns[i].addEventListener('click', async (e) => {
+        const questionId = parseInt(e.target.classList[0].split('-')[1],10);
+
+        if (form.classList.contains("hidden")) {
+            form.classList.remove("hidden");
+            textArea.classList.add("hidden");
+            answerContent.classList.add("hidden");
+            editAnswerButton.classList.add("hidden");
+            deleteAnswerButton.classList.add("hidden");
+        }
+
+
+
+
+
+        editLabelforDelete.innerHTML = "Do you really want to delete your answer?";
+        let submitBtn = document.getElementById(`edit-submit-${answerId}`);
+        submitBtn.innerHTML = "Delete"
+
+        submitBtn.addEventListener('click', async(submitEvent) => {
+            const res = await fetch(`/questions/${questionId}/answers/${answerId}`, {
+                method: "DELETE"
+            })
+
+            const data = await res.json();
+            if (data.message === "Success") {
+                const answerDiv = document.querySelector(`#answerDiv-${answerId}`);
+                answerDiv.remove();
+            }
+
         })
 
-        const data = await res.json();
-        if (data.message === "Success") {
-            // const answerContent = document.querySelector(`#answerDisplay-${answerId}`);
-            // answerContent.remove();
-            // form.remove();
-            // editAnswerButton.remove();
-            // deleteAnswerButton.remove();
 
-            const answerDiv = document.querySelector(`#answerDiv-${answerId}`);
-            answerDiv.remove();
+        const cancelBtn = document.querySelector(`#edit-cancel-${answerId}`);
+        cancelBtn.addEventListener('click', (event)=> {
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add('hidden')
+            answerContent.classList.remove("hidden");
+            editAnswerButton.classList.remove("hidden");
+            deleteAnswerButton.classList.remove("hidden");
+            textArea.classList.remove("hidden");
+            submitBtn.innerHTML = "Submit";
+            editLabelforDelete.innerHTML = "Edit your answer:";
+            })
 
-        }
-    })
+        })
 }
