@@ -14,8 +14,12 @@ const inputValidators = [
     .isLength({ max: 50 })
     .withMessage("Input too long")
     .custom((value) => !/^ *$/.test(value))
-    .withMessage("Cannot be empty")
+    .withMessage("spaces")
 ]
+
+router.get('/results', asyncHandler(async(req,res)=>{
+    res.render('search-results', { title: "Search Results", questions: {}, search: 'No search terms provided' })
+}));
 
 router.post('/results', inputValidators, asyncHandler(async(req,res)=>{
     // console.log(req.body.searchText);
@@ -32,11 +36,6 @@ router.post('/results', inputValidators, asyncHandler(async(req,res)=>{
         return res.redirect(backURL);
         // return res.redirect('back');
     }
-
-
-
-
-
 
 
     words = words.map(word =>`%${word}%`)

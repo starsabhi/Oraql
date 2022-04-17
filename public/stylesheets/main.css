@@ -1101,6 +1101,27 @@ animation: strokeanim 3s ease-out forwards;
   grid-row: 3;
 }
 
+mark {
+  /* background-color: rgb(165, 234, 252);
+  border-radius: 3px; */
+  animation: pulseanim 1.8s ease-in-out alternate infinite;
+  background-color: transparent;
+  color: white;
+}
+
+@keyframes pulseanim {
+  0% {
+    filter: drop-shadow(0px 0px 2px rgb(0, 170, 255));
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0, 170, 255, 0);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 6px rgb(0, 170, 255));
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0, 170, 255, .4);
+  }
+}
+
 
 @keyframes strokeanim {
 
@@ -1144,11 +1165,6 @@ footer {
   height: 110px;
   width: 100%
 } */
-
-mark {
-  background-color: rgb(165, 234, 252);
-  border-radius: 3px;
-}
 
 
 .askQTextarea, .askQForm {
