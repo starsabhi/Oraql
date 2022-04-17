@@ -133,20 +133,21 @@ for (let i = 0; i < deleteBtns.length; i++) {
         let submitBtn = document.getElementById(`edit-submit-${answerId}`);
         submitBtn.innerHTML = "Delete"
 
-        submitBtn.addEventListener('click', async(submitEvent) => {
-            submitEvent.preventDefault()
+        async function deleteAns(e) {
+            e.preventDefault()
             const res = await fetch(`/questions/${questionId}/answers/${answerId}`, {
                 method: "DELETE"
             })
 
             const data = await res.json();
             if (data.message === "Success") {
-
                 const answerDiv = document.getElementById(`answerDiv-${answerId}`);
                 answerDiv.remove();
             }
+        }
 
-        })
+
+        submitBtn.addEventListener('click', deleteAns);
 
 
         const cancelBtn = document.querySelector(`#edit-cancel-${answerId}`);
@@ -160,6 +161,7 @@ for (let i = 0; i < deleteBtns.length; i++) {
             textArea.classList.remove("hidden");
             submitBtn.innerHTML = "Submit";
             editLabelforDelete.innerHTML = "Edit your answer:";
+            submitBtn.removeEventListener('click', deleteAns);
             })
 
         })
