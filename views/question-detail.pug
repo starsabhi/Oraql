@@ -38,7 +38,7 @@ block content
                                 form(class='hidden' id=`edit-form-${answer.id}`)
                                     div(class='errorList formError' id=`edit-errors-${answer.id}`)
                                     label(class='editLabel' id=`edit-label-delete-${answer.id}`) Edit your answer:
-                                    textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="55" rows="10" class='ansEditTextArea')
+                                    textarea(type="text" name="content" id=`${answer.id}-edit-content` cols="55" rows="10" class='askQTextarea')
                                     div(class="formBtnDiv")
                                         button(class="edit-cancel formButtonNoMargin cancelButton" id=`edit-cancel-${answer.id}`) Cancel
                                         button(class=`q-${question.id} edit-submit formButtonNoMargin` id=`edit-submit-${answer.id}`) Submit
