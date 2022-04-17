@@ -255,7 +255,6 @@ router.delete(`/:questionId(\\d+)/answers/:answerId(\\d+)`, requireAuth, asyncHa
   const answer = await db.Answer.findByPk(answerId);
 
   checkPermissions(answer, res.locals.user);
-
   await answer.destroy();
   res.json({
     message: "Success"
