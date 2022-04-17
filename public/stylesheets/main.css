@@ -131,8 +131,8 @@ textarea {
 }
 
 .ansEditTextArea {
-  font-size: 12e;
-  
+  /* font-size: 12em; */
+  width: 100%;
 }
 
 .editLabel {
@@ -1155,4 +1155,13 @@ mark {
 #noAccount, #haveAcc {
   white-space: pre-line;
 
+}
+
+
+.editAnsForm {
+  width: 100%;
+}
+
+#answerBigDiv {
+  max-width: 500px;
 }
