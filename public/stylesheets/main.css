@@ -1104,21 +1104,21 @@ animation: strokeanim 3s ease-out forwards;
 mark {
   /* background-color: rgb(165, 234, 252);
   border-radius: 3px; */
-  animation: pulseanim 1.5s ease-in-out alternate infinite;
+  animation: pulseanim 1.8s ease-in-out alternate infinite;
   background-color: transparent;
   color: white;
 }
 
 @keyframes pulseanim {
   0% {
-    filter: drop-shadow(0px 0px 1px rgb(0, 170, 255));
+    filter: drop-shadow(0px 0px 2px rgb(0, 170, 255));
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgba(0, 170, 255, 0);
   }
   100% {
-    filter: drop-shadow(0px 0px 7px rgb(0, 170, 255));
+    filter: drop-shadow(0px 0px 6px rgb(0, 170, 255));
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(0, 170, 255, .5);
+    -webkit-text-stroke-color: rgba(0, 170, 255, .4);
   }
 }
 
