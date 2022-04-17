@@ -12,9 +12,9 @@ body {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 a {
@@ -136,8 +136,8 @@ textarea {
 }
 
 .ansEditTextArea {
-  /* font-size: 12em; */
-  width: 100%;
+  font-size: 12e;
+
 }
 
 .editLabel {
@@ -1127,9 +1127,9 @@ animation: strokeanim 3s ease-out forwards;
 }
 
 footer {
-  /* position: absolute;
+  position: absolute;
   bottom: 0px;
-  margin-top: 20px; */
+  margin-top: 20px;
   width: 100%;
   background-color: rgb(25, 20, 28);
   padding-top: 10px;
@@ -1175,13 +1175,4 @@ mark {
 #noAccount, #haveAcc {
   white-space: pre-line;
 
-}
-
-
-.editAnsForm {
-  width: 100%;
-}
-
-#answerBigDiv {
-  max-width: 500px;
 }
