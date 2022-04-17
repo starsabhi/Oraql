@@ -113,7 +113,6 @@ for (let i = 0; i < deleteBtns.length; i++) {
 
 
     deleteBtns[i].addEventListener('click', async (e) => {
-        const questionId = parseInt(e.target.classList[0].split('-')[1],10);
 
         if (form.classList.contains("hidden")) {
             form.classList.remove("hidden");
@@ -123,6 +122,7 @@ for (let i = 0; i < deleteBtns.length; i++) {
             deleteAnswerButton.classList.add("hidden");
         }
 
+        const questionId = parseInt(e.target.classList[0].split('-')[1],10);
 
 
 
@@ -132,13 +132,15 @@ for (let i = 0; i < deleteBtns.length; i++) {
         submitBtn.innerHTML = "Delete"
 
         submitBtn.addEventListener('click', async(submitEvent) => {
+            submitEvent.preventDefault()
             const res = await fetch(`/questions/${questionId}/answers/${answerId}`, {
                 method: "DELETE"
             })
 
             const data = await res.json();
             if (data.message === "Success") {
-                const answerDiv = document.querySelector(`#answerDiv-${answerId}`);
+
+                const answerDiv = document.getElementById(`answerDiv-${answerId}`);
                 answerDiv.remove();
             }
 
