@@ -77,12 +77,14 @@ for (let i = 0; i < editButtons.length; i++) {
 
         const cancelBtn = document.querySelector(`#edit-cancel-${answerId}`);
         cancelBtn.addEventListener('click', (event)=> {
+            const errorDiv = document.getElementById(`edit-errors-${answerId}`);
             event.preventDefault();
             event.stopPropagation();
             form.classList.add('hidden')
             answerContent.classList.remove("hidden");
             editAnswerButton.classList.remove("hidden");
             deleteAnswerButton.classList.remove("hidden");
+            errorDiv.innerHTML = '';
             // console.log("Inner HTML", content.innerHTML)
             // content.innerHTML = originalAns.innerHTML
         })
