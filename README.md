@@ -150,7 +150,6 @@ router.get(
     });
 
     const answers = question.Answers;
-
     answers.sort((a, b) => {
       const keyA = new Date(a.createdAt);
       const keyB = new Date(b.createdAt);
@@ -199,38 +198,38 @@ const userValidators = [
 submitBtn.addEventListener("click", async (submitEvent) => {
     submitEvent.preventDefault();
     const contentValue = document.getElementById(
-        `${answerId}-edit-content`
+      `${answerId}-edit-content`
     ).value;
 
     const questionId = parseInt(
-        submitEvent.target.classList[0].split("-")[1],
-        10
+      submitEvent.target.classList[0].split("-")[1],
+      10
     );
 
     const res = await fetch(`/questions/${questionId}/answers/${answerId}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
         content: contentValue,
-        }),
+      }),
     });
 
     const data = await res.json();
     if (data.message === "Success") {
-        let contentEle = document.getElementById(`answer-content-${answerId}`);
-        let lines = data.answer.content.split("\n");
-        lines = lines.map((line) => `<div>${line}</div>`);
-        contentEle.innerHTML = lines.join("");
+      let contentEle = document.getElementById(`answer-content-${answerId}`);
+      let lines = data.answer.content.split("\n");
+      lines = lines.map((line) => `<div>${line}</div>`);
+      contentEle.innerHTML = lines.join("");
 
-        form.classList.add("hidden");
-        answerContent.classList.remove("hidden");
-        editAnswerButton.classList.remove("hidden");
-        deleteAnswerButton.classList.remove("hidden");
+      form.classList.add("hidden");
+      answerContent.classList.remove("hidden");
+      editAnswerButton.classList.remove("hidden");
+      deleteAnswerButton.classList.remove("hidden");
     } else {
-        if (data.message === "Failure") {
+      if (data.message === "Failure") {
         const errorDiv = document.getElementById(`edit-errors-${answerId}`);
         errorDiv.innerHTML = data.errors[0];
-        }
+      }
     }
 });
 ```
