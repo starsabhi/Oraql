@@ -12,9 +12,9 @@ body {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between; */
+  justify-content: space-between;
 }
 
 a {
@@ -325,7 +325,7 @@ select {
 
 .footerSpacer {
   height: 110px;
-  width: 100%
+  width: 100%;
 }
 
 .footerIcons {
@@ -473,20 +473,12 @@ select {
 }
 
 .questionDivTagPage {
-  /* background-color: rgb(73, 62, 84); */
-  /* min-width: 400px; */
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  /* border-radius: 10px; */
-  /* border: 2px solid rgb(25, 20, 28); */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3); */
-  /* border: 1px solid rgb(25, 20, 28); */
-  /* box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3); */
-  /* filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2)); */
   padding: 10px 0px;
   flex-wrap: wrap;
 }
@@ -1150,8 +1142,8 @@ mark {
 }
 
 footer {
-  position: absolute;
-  bottom: 0px;
+  /* position: absolute;
+  bottom: 0px; */
   margin-top: 20px;
   width: 100%;
   background-color: rgb(25, 20, 28);
@@ -1160,11 +1152,6 @@ footer {
   box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, .2));
 }
-
-/* .footerSpacer {
-  height: 110px;
-  width: 100%
-} */
 
 
 .askQTextarea, .askQForm {
