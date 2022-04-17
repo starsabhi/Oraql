@@ -59,6 +59,11 @@ nav {
   width: 100%
 }
 
+.extraNavSpacerSmall {
+  height: 8px;
+  width: 100%
+}
+
 h1 {
   font-size: 2rem;
 }
@@ -416,6 +421,7 @@ select {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  animation: fadein 3s ease-in;
 }
 
 .mainContentDiv {
@@ -897,11 +903,11 @@ select {
 
 
 .logoSvg {
-  animation: logoBlur 15s ease-in-out alternate infinite;
+  animation: logoBlur 12s ease-in-out alternate infinite;
 }
 
 g > path {
-  animation: logoColor 15s ease-in-out alternate infinite;
+  animation: logoColor 12s ease-in-out alternate infinite;
 }
 
 @keyframes logoBlur {
@@ -936,6 +942,16 @@ g > path {
      fill: rgba(73, 62, 84);
   }
 }
+
+@keyframes fadein {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
 
 .qCreatedDate {
     padding-left: 10px;
