@@ -74,8 +74,8 @@ Logged in users can:
 
 
 ### Question Detail Page
+![image](https://user-images.githubusercontent.com/95883222/163737976-1a12534b-8c50-42e5-ace9-1ddb2f6ea5e7.png)
 
-![image](https://user-images.githubusercontent.com/95883222/163737627-305c6b43-4a19-4cfc-90e5-52264c7a5164.png)
 
 ### Search Results Page
 
