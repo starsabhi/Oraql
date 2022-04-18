@@ -62,23 +62,24 @@ Logged in users can:
 
 ### Home Page
 
-![image](https://user-images.githubusercontent.com/95883222/163636079-46fe6865-8996-4a02-b1bb-ec2c782e26e8.png)
-
+![image](https://user-images.githubusercontent.com/95883222/163737543-051ee342-f2f7-4d63-8a10-a820ca4a5f59.png)
 
 ### User Sign Up Page
 
-![image](https://user-images.githubusercontent.com/95883222/163648546-c8dce78e-5b2c-4d98-8fc6-5af32423ad01.png)
+![image](https://user-images.githubusercontent.com/95883222/163737581-632827b6-aae9-4e2f-9718-0a912bc0d35f.png)
 
 ### Add Question Page
 
-![image](https://user-images.githubusercontent.com/95883222/163648233-fc1358d7-800d-4681-9fe0-6305dd99abea.png)
+![image](https://user-images.githubusercontent.com/95883222/163737606-f8fd437c-87f5-45cc-ab3b-6e971fd97ff7.png)
+
 
 ### Question Detail Page
-![image](https://user-images.githubusercontent.com/95883222/163648383-7313edd3-7919-4825-8876-8fdd55133094.png)
+
+![image](https://user-images.githubusercontent.com/95883222/163737627-305c6b43-4a19-4cfc-90e5-52264c7a5164.png)
 
 ### Search Results Page
-![image](https://user-images.githubusercontent.com/95883222/163649044-f604135e-cbef-47e1-a51b-ea7dbea54a6f.png)
 
+![image](https://user-images.githubusercontent.com/95883222/163737653-481b15fe-6315-4f85-8bab-b489340b9fbc.png)
 
 
 # Future Features
