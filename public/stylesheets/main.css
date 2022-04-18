@@ -1104,13 +1104,11 @@ mark {
 @keyframes pulseanim {
   0% {
     filter: drop-shadow(0px 0px 2px rgb(0, 170, 255));
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(0, 170, 255, 0);
+    color: rgb(255, 255, 255);
   }
   100% {
     filter: drop-shadow(0px 0px 6px rgb(0, 170, 255));
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(0, 170, 255, .4);
+    color: rgb(90, 200, 255);
   }
 }
 
