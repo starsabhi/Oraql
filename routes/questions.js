@@ -90,7 +90,7 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const keyB = new Date(b.createdAt);
     // console.log(keyA)
     // console.log(keyB)
-    return keyA < keyB ? -1 : 1;
+    return keyA > keyB ? -1 : 1;
   });
 
   answers.forEach((answer) => {
