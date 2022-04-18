@@ -59,5 +59,8 @@ Heroku (pushing your code)
 heroku login
 heroku git:remote -a oraql
 
+heroku run npx sequelize-cli db:migrate:undo:all
+heroku run npx sequelize-cli db:seed:undo:all
 heroku run npx sequelize-cli db:migrate
 heroku run npx sequelize-cli db:seed:all
+git push heroku
