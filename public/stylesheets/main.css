@@ -525,7 +525,8 @@ select {
 }
 
 .askedBy {
-  color: rgb(37, 33, 43);
+  /* color: rgb(37, 33, 43); */
+  color: black;
   font-weight: bold;
   /* vertical-align: middle; */
   display: flex;
